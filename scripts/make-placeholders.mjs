@@ -64,7 +64,7 @@ function svg(w, h, sky, glow, land, label, seed) {
   ${ridge(w, h, 0.62, 0.3, seed, "#3a4048", 0.8)}
   ${ridge(w, h, 0.74, 0.2, seed + 1, land, 0.9)}
   ${ridge(w, h, 0.88, 0.12, seed + 2, "#141512", 1)}
-  <text x="${Math.round(w * 0.05)}" y="${Math.round(h * 0.08)}" font-family="Segoe UI, Arial, sans-serif"
+  <text x="${Math.round(w * 0.05)}" y="${Math.round(h * 0.96)}" font-family="Segoe UI, Arial, sans-serif"
     font-size="${fontSize}" letter-spacing="2" fill="#F4F1EA" fill-opacity="0.6">PLACEHOLDER · ${label}</text>
 </svg>`;
 }
