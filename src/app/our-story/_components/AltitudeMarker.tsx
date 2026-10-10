@@ -16,9 +16,9 @@ export function AltitudeMarker({ progress, summit }: AltitudeMarkerProps) {
 
   return (
     <div aria-hidden>
-      {/* Desktop: thin bar on the right edge with flag-angled ticks. */}
+      {/* Desktop: thin bar on the right edge with level ticks, like a survey staff. */}
       <div className="pointer-events-none fixed top-1/2 right-6 z-30 hidden h-[56vh] -translate-y-1/2 items-start gap-4 xl:flex">
-        <motion.span className="-mt-4 bg-background/85 px-2 py-1 font-serif text-2xl text-foreground tabular-nums">
+        <motion.span className="-mt-3 border border-border bg-background/90 px-2.5 py-1 font-mono text-sm tracking-[0.15em] text-foreground tabular-nums">
           {label}
         </motion.span>
         <div className="relative h-full w-0.5 bg-foreground/15">
@@ -26,7 +26,7 @@ export function AltitudeMarker({ progress, summit }: AltitudeMarkerProps) {
           {TICKS.map((tick) => (
             <span
               key={tick}
-              className="absolute -left-1.5 h-px w-3.5 rotate-[-34deg] bg-foreground/40"
+              className="absolute -left-1.5 h-px w-3.5 bg-foreground/40"
               style={{ bottom: `${tick}%` }}
             />
           ))}
@@ -34,7 +34,7 @@ export function AltitudeMarker({ progress, summit }: AltitudeMarkerProps) {
       </div>
       {/* Phone and tablet: line along the bottom edge, value in a tag. */}
       <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 xl:hidden">
-        <motion.span className="notch absolute right-4 bottom-3 bg-background/90 px-3 py-1 font-serif text-lg text-foreground tabular-nums">
+        <motion.span className="absolute right-4 bottom-3 border border-border bg-background/90 px-3 py-1 font-mono text-xs tracking-[0.15em] text-foreground tabular-nums">
           {label}
         </motion.span>
         <div className="h-1 w-full bg-foreground/10">

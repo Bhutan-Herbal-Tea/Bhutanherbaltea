@@ -2,29 +2,38 @@ import type { Photo } from "./site";
 
 type Hero = { title: string; intro: string; image: Photo };
 
+export type AccentHeading = { lead: string; accent: string; tail?: string };
+
 export const homeCopy = {
   hero: {
+    place: "Bumthang, Bhutan · 2,750 m",
+    title: { lead: "Wellness in Every", accent: "Sip." } satisfies AccentHeading,
     subtext: "Certified organic herbal teas, grown slowly above 2,750 metres on Bhutan's first herbal tea farm.",
     ctaLabel: "Discover our story",
+    teasLabel: "See all teas",
+    plateLabel: ["Bhutan Herbal Tea", "Est. 2016"],
   },
-  statement: {
-    heading: "Above 2,750 metres, everything grows a little slower.",
-    body: "Slow growth lets our herbs build up more of the volatile oils that carry flavour, aroma and nutrients.",
+  factsLabel: "Bhutan Herbal Tea in numbers",
+  why: {
+    eyebrow: "Grown higher",
+    title: { lead: "Why", accent: "altitude", tail: "matters" } satisfies AccentHeading,
+    rows: [
+      { title: "Slow growth", body: "In the cool mountain air above 2,750 metres, our herbs grow slowly." },
+      {
+        title: "More volatile oils",
+        body: "Growing slowly, the plants build up more of the volatile oils that carry flavour and fragrance.",
+      },
+      { title: "Richer in the cup", body: "That shows in every cup: richer flavour, deeper aroma and more nutrients." },
+    ],
     linkLabel: "Discover our story",
-    image: { src: "/images/story/stage-4.jpg", alt: "High slopes above the farm" },
   },
   featured: {
-    eyebrow: "Our teas",
-    heading: "Brand Bhutan certified",
-    body: "Chamomile, Peppermint and Lemon Verbena carry Brand Bhutan certification. All five of our teas are certified organic.",
+    eyebrow: "Brand Bhutan certified",
+    title: { lead: "Three teas carry", accent: "Brand Bhutan", tail: "certification" } satisfies AccentHeading,
+    body: "Chamomile, Peppermint and Lemon Verbena. All five of our teas are certified organic.",
     linkLabel: "See all teas",
   },
-  grown: {
-    heading: "Hand-harvested at their peak",
-    body: "Organic and regenerative farming, carefully dried herbs, and nothing added.",
-    linkLabel: "How it's grown",
-    image: { src: "/images/fields/herb-rows.jpg", alt: "Rows of herbs growing on the farm" },
-  },
+  quoteLabel: "Our promise",
   contactPanel: {
     heading: "Questions about our teas?",
     body: "Ask us anything, from which tea to try first to where to find us.",
@@ -35,21 +44,21 @@ export const homeCopy = {
 export const teasPage: { meta: { title: string; description: string }; hero: Hero } = {
   meta: {
     title: "Our Teas",
-    description: "Five certified organic herbal teas grown above 2,750 m in Thimphu, Bhutan.",
+    description: "Five certified organic herbal teas grown above 2,750 m in Bumthang, Bhutan.",
   },
   hero: {
     title: "Five teas, grown higher",
-    intro: "Certified organic herbal teas from our farm in Thimphu.",
-    image: { src: "/images/fields/drying.jpg", alt: "Herbs laid out to dry" },
+    intro: "Certified organic herbal teas from our farm in Bumthang.",
+    image: { src: "/images/fields/drying.jpg", alt: "Bunches of herbs hung up to dry" },
   },
 };
 
 export const teaDetailCopy = {
-  eyebrow: "Certified organic, Thimphu",
+  eyebrow: "Certified organic, Bumthang",
+  organicLabel: "Certified organic",
   benefitsHeading: "Benefits",
   tasteHeading: "Taste notes",
   brewingHeading: "Brewing",
-  imageAltSuffix: "tea",
   whereToBuy: {
     heading: "Where to buy",
     body: "Find our teas at our stockists, or get in touch with us directly.",
@@ -66,9 +75,9 @@ export const contactPage = {
   hero: {
     title: "Get in touch",
     intro: "Where to find our teas, and how to reach us.",
-    image: { src: "/images/fields/farm.jpg", alt: "The Bhutan Herbal Tea farm in the hills of Thimphu" },
+    image: { src: "/images/fields/farm.jpg", alt: "Golden fields below a Bhutanese building and forested mountains" },
   } satisfies Hero,
-  sideImage: { src: "/images/fields/herb-rows.jpg", alt: "Rows of herbs growing on the farm" },
+  sideImage: { src: "/images/fields/herb-rows.jpg", alt: "Rows of young plants in a field below mountains" },
   getInTouchHeading: "Talk to us",
   comingSoon: "Contact details coming soon.",
   followHeading: "Follow us",
@@ -84,5 +93,5 @@ export const notFoundCopy = {
   body: "The page you were looking for isn't here. Let's get you back on the trail.",
   homeLabel: "Back to home",
   teasLabel: "See all teas",
-  image: { src: "/images/story/summit.jpg", alt: "Mountain ridges above the herb fields at sunset" },
+  image: { src: "/images/story/summit.jpg", alt: "Prayer flags on a post at a snowy mountain pass" },
 };

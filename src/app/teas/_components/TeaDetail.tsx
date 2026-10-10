@@ -1,9 +1,10 @@
-import Image from "next/image";
 import { Leaf } from "lucide-react";
 import type { Tea } from "@/data/teas";
+import { PLATE_PLACE } from "@/data/site";
 import { teaDetailCopy } from "@/data/pages";
 import { ButtonLink } from "@/components/ui/ButtonLink";
-import { TeaCard } from "@/components/teas/TeaCard";
+import { SpecimenPlate } from "@/components/ui/SpecimenPlate";
+import { SpecimenCard } from "@/components/teas/SpecimenCard";
 
 type TeaDetailProps = { tea: Tea; others: Tea[] };
 
@@ -11,21 +12,19 @@ export function TeaDetail({ tea, others }: TeaDetailProps) {
   const copy = teaDetailCopy;
   return (
     <article className="pt-24 xl:pt-32">
-      <div className="container-page grid gap-10 md:gap-12 xl:grid-cols-[45fr_55fr] xl:gap-20">
-        <div className="notch relative mx-auto aspect-4/5 w-full overflow-hidden bg-card md:w-[70%] xl:sticky xl:top-28 xl:w-full xl:self-start">
-          <Image
-            src={tea.image}
-            alt={`${tea.name} ${copy.imageAltSuffix}`}
-            fill
-            preload
-            sizes="(min-width: 1280px) 45vw, (min-width: 768px) 70vw, 100vw"
-            className="object-cover"
-          />
-        </div>
-        <div className="flex flex-col gap-10 xl:py-8">
+      <div className="container-page grid gap-12 xl:grid-cols-[45fr_55fr] xl:gap-20">
+        <SpecimenPlate
+          image={{ src: tea.image, alt: tea.imageAlt }}
+          preload
+          label={[tea.botanical, copy.organicLabel, PLATE_PLACE]}
+          sizes="(min-width: 1280px) 42vw, (min-width: 768px) 70vw, 100vw"
+          className="mx-auto w-full md:w-[70%] xl:sticky xl:top-28 xl:w-full xl:self-start"
+        />
+        <div className="flex flex-col gap-10 xl:py-6">
           <header>
             <p className="eyebrow text-accent-text">{copy.eyebrow}</p>
             <h1 className="mt-4 font-serif text-display text-foreground">{tea.name}</h1>
+            <p className="mt-2 pb-1 font-serif text-2xl text-muted-foreground italic">{tea.botanical}</p>
             <p className="mt-6 text-lead text-muted-foreground">{tea.description}</p>
           </header>
           {tea.benefits.length > 0 && (
@@ -59,7 +58,7 @@ export function TeaDetail({ tea, others }: TeaDetailProps) {
               <p className="mt-4 text-muted-foreground">{tea.brewing}</p>
             </section>
           )}
-          <section aria-labelledby="buy-heading" className="border-l-2 border-accent-mark pl-6">
+          <section aria-labelledby="buy-heading" className="border-l-2 border-forest pl-6 dark:border-saffron">
             <h2 id="buy-heading" className="font-serif text-3xl text-foreground">
               {copy.whereToBuy.heading}
             </h2>
@@ -76,10 +75,10 @@ export function TeaDetail({ tea, others }: TeaDetailProps) {
           <h2 id="other-teas-heading" className="font-serif text-title text-foreground">
             {copy.otherTeasHeading}
           </h2>
-          <ul className="scroll-row -mx-5 mt-10 flex snap-x snap-mandatory scroll-px-5 gap-4 overflow-x-auto px-5 pb-2 md:-mx-10 md:scroll-px-10 md:gap-5 md:px-10 xl:mx-0 xl:grid xl:grid-cols-4 xl:gap-8 xl:overflow-visible xl:px-0">
+          <ul className="scroll-row -mx-5 mt-10 flex snap-x snap-mandatory scroll-px-5 gap-5 overflow-x-auto px-5 pt-2 pb-2 md:-mx-10 md:scroll-px-10 md:px-10 xl:mx-0 xl:grid xl:grid-cols-4 xl:gap-8 xl:overflow-visible xl:px-0">
             {others.map((other) => (
-              <li key={other.slug} className="w-[62%] shrink-0 snap-start md:w-[38%] xl:w-auto">
-                <TeaCard tea={other} sizes="(min-width: 1280px) 280px, (min-width: 768px) 38vw, 62vw" />
+              <li key={other.slug} className="w-[66%] shrink-0 snap-start md:w-[40%] xl:w-auto">
+                <SpecimenCard tea={other} sizes="(min-width: 1280px) 280px, (min-width: 768px) 40vw, 66vw" />
               </li>
             ))}
           </ul>

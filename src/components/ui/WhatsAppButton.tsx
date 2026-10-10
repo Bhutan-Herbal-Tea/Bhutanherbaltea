@@ -4,7 +4,7 @@ import { contact } from "@/data/site";
 import { whatsappHref } from "@/lib/contact";
 import { cn } from "@/lib/utils";
 
-type WhatsAppButtonProps = { label: string; variant?: "default" | "ink"; className?: string };
+type WhatsAppButtonProps = { label: string; variant?: "default" | "light"; className?: string };
 
 export function WhatsAppButton({ label, variant = "default", className }: WhatsAppButtonProps) {
   const href = whatsappHref(contact.whatsapp);

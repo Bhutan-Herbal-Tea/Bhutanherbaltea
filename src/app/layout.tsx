@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Geist } from "next/font/google";
+import { Cormorant_Garamond, DM_Mono, Geist } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL, TAGLINE } from "@/data/site";
 import { themeInitScript } from "@/lib/theme";
@@ -22,6 +23,21 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
+const dmMono = DM_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-dm-mono",
+  display: "swap",
+});
+
+// Noto Serif Tibetan cut down to the glyphs of DRUK_JA (~3.5 KB instead of ~714 KB).
+// Rebuild it with `npm run assets:dzongkha` if the Dzongkha text changes.
+const notoTibetan = localFont({
+  src: "./fonts/noto-serif-tibetan-subset.woff2",
+  variable: "--font-noto-tibetan",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: `${SITE_NAME} · ${TAGLINE}`, template: `%s · ${SITE_NAME}` },
@@ -40,7 +56,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     // The theme script sets data-theme before React hydrates, hence suppressHydrationWarning.
-    <html lang="en" suppressHydrationWarning className={`${geist.variable} ${cormorant.variable}`}>
+    <html lang="en" suppressHydrationWarning className={`${geist.variable} ${cormorant.variable} ${dmMono.variable} ${notoTibetan.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>

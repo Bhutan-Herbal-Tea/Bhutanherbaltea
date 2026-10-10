@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: notFoundCopy.title };
 
 export default function NotFound() {
   return (
-    <div className="slant-bottom relative flex min-h-dvh items-center overflow-hidden pt-24 pb-[calc(var(--slant)+5rem)]">
+    <div className="relative flex min-h-dvh items-center overflow-hidden pt-24 pb-20">
       <Image
         src={notFoundCopy.image.src}
         alt={notFoundCopy.image.alt}
@@ -23,7 +23,9 @@ export default function NotFound() {
         <h1 className="mt-4 max-w-3xl font-serif text-display text-mist">{notFoundCopy.heading}</h1>
         <p className="mt-6 max-w-xl text-lead text-mist/85">{notFoundCopy.body}</p>
         <div className="mt-10 flex flex-col items-start gap-6 md:flex-row md:items-center md:gap-8">
-          <ButtonLink href="/">{notFoundCopy.homeLabel}</ButtonLink>
+          <ButtonLink href="/" variant="light">
+            {notFoundCopy.homeLabel}
+          </ButtonLink>
           <ArrowLink href="/teas" tone="photo">
             {notFoundCopy.teasLabel}
           </ArrowLink>

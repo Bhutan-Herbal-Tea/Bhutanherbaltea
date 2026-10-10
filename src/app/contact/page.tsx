@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { contact } from "@/data/site";
 import { contactPage } from "@/data/pages";
@@ -7,6 +6,7 @@ import { hasDirectContact, mailtoHref, socialLinks, telHref } from "@/lib/contac
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
 import { SocialLinks } from "@/components/ui/SocialLinks";
+import { SpecimenPlate } from "@/components/ui/SpecimenPlate";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 export const metadata: Metadata = {
@@ -24,15 +24,12 @@ export default function ContactPage() {
       <PageHero {...contactPage.hero} />
       <Section>
         <div className="grid gap-14 md:grid-cols-2 md:gap-12 xl:grid-cols-[1fr_1.4fr_1.4fr] xl:gap-16">
-          <div className="notch relative hidden aspect-3/4 overflow-hidden xl:block">
-            <Image
-              src={contactPage.sideImage.src}
-              alt={contactPage.sideImage.alt}
-              fill
-              sizes="25vw"
-              className="object-cover"
-            />
-          </div>
+          <SpecimenPlate
+            image={contactPage.sideImage}
+            frameClassName="aspect-3/4"
+            sizes="25vw"
+            className="hidden self-start xl:block"
+          />
 
           <section aria-labelledby="get-in-touch-heading">
             <h2 id="get-in-touch-heading" className="font-serif text-title text-foreground">
@@ -59,7 +56,7 @@ export default function ContactPage() {
             )}
             {hasSocials && (
               <div className="mt-12">
-                <h3 className="font-serif text-2xl text-foreground">{contactPage.followHeading}</h3>
+                <h3 className="eyebrow text-accent-text">{contactPage.followHeading}</h3>
                 <SocialLinks className="mt-4" />
               </div>
             )}

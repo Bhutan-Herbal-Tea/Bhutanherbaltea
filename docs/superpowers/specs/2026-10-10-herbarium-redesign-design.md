@@ -43,7 +43,7 @@ All text pairs must pass WCAG AA; `tests/contrast.test.ts` is updated to the new
 - **Cormorant Garamond**: headlines. Each major headline may set **one word in italic** in `forest` (light) or `saffron` (dark), e.g. "Wellness in every *sip*." Italic words with descenders get `leading-[1.1]` and bottom clearance.
 - **Geist**: body text.
 - **DM Mono** (new, `next/font/google`): small uppercase specimen labels, the ticker and the facts band. Used only for labels, never for paragraphs.
-- **Noto Serif Tibetan** (new): decorative Dzongkha. Only verified text: འབྲུག་ཡུལ། (Druk Yul, the name of Bhutan). Any tea-specific Dzongkha waits for the client.
+- **Noto Serif Tibetan** (new): decorative Dzongkha. Text: འབྲུག་ཇ། (Druk ja, "Bhutanese tea"; chosen by the user 2026-10-10, replacing འབྲུག་ཡུལ། Druk Yul).
 
 ### Signature device: the specimen plate
 

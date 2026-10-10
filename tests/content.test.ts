@@ -2,13 +2,13 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
-import { contact, heroPhoto, nav, SUMMIT_ALTITUDE_M, type Photo } from "../src/data/site.ts";
+import { contact, DRUK_JA, facts, heroPhoto, nav, SUMMIT_ALTITUDE_M, TAGLINE, type Photo } from "../src/data/site.ts";
 import { featuredTeas, getTea, otherTeas, teas } from "../src/data/teas.ts";
 import { LUNGTA_COLORS, stages, storyPage } from "../src/data/story.ts";
 import { grownPage, people, practices } from "../src/data/grown.ts";
 import { contactPage, homeCopy, notFoundCopy, teaDetailCopy, teasPage } from "../src/data/pages.ts";
 
-const allContent = { contact, heroPhoto, nav, teas, stages, storyPage, grownPage, people, practices, contactPage, homeCopy, notFoundCopy, teaDetailCopy, teasPage };
+const allContent = { contact, facts, heroPhoto, nav, teas, stages, storyPage, grownPage, people, practices, contactPage, homeCopy, notFoundCopy, teaDetailCopy, teasPage };
 
 function collectPhotos(value: unknown, found: Photo[] = []): Photo[] {
   if (Array.isArray(value)) value.forEach((v) => collectPhotos(v, found));
@@ -50,7 +50,7 @@ test("benefits stay empty until the client approves wording (update this test wh
 });
 
 test("every image referenced in content exists in public/ and has alt text", () => {
-  const photos = [...collectPhotos(allContent), ...teas.map((t) => ({ src: t.image, alt: t.name }))];
+  const photos = [...collectPhotos(allContent), ...teas.map((t) => ({ src: t.image, alt: t.imageAlt }))];
   assert.ok(photos.length >= 20, `expected at least 20 photos, found ${photos.length}`);
   for (const photo of photos) {
     assert.ok(existsSync(join(process.cwd(), "public", photo.src)), `missing file ${photo.src}`);
@@ -60,10 +60,6 @@ test("every image referenced in content exists in public/ and has alt text", () 
 
 test("the summit altitude matches the source article", () => {
   assert.equal(SUMMIT_ALTITUDE_M, 2750);
-});
-
-test("no Bumthang references remain in content", () => {
-  assert.doesNotMatch(JSON.stringify(allContent), /bumthang/i);
 });
 
 test("no em or en dashes in any visible content", () => {
@@ -79,7 +75,8 @@ test("every story stage has a heading, body and marker", () => {
 
 test("one label per CTA intent", () => {
   assert.equal(homeCopy.hero.ctaLabel, "Discover our story");
-  assert.equal(homeCopy.statement.linkLabel, homeCopy.hero.ctaLabel);
+  assert.equal(homeCopy.why.linkLabel, homeCopy.hero.ctaLabel);
+  assert.equal(homeCopy.hero.teasLabel, "See all teas");
   assert.equal(homeCopy.featured.linkLabel, "See all teas");
   assert.equal(storyPage.summit.teasLabel, "See all teas");
   assert.equal(notFoundCopy.teasLabel, "See all teas");
@@ -95,4 +92,33 @@ test("lungta has the five element colours in traditional order", () => {
 
 test("home hero subtext stays within 20 words", () => {
   assert.ok(homeCopy.hero.subtext.split(/\s+/).length <= 20);
+});
+
+test("every tea has the botanical name for its specimen label", () => {
+  assert.deepEqual(
+    teas.map((t) => t.botanical),
+    ["Matricaria chamomilla", "Mentha × piperita", "Aloysia citrodora", "Hippophae", "Hypericum"],
+  );
+});
+
+test("the facts band shows the five sourced facts", () => {
+  assert.deepEqual(facts.map((f) => f.value), ["2016", "2,750 m", "5", "3", "1st"]);
+  for (const fact of facts) assert.ok(fact.label.length > 0);
+});
+
+test("the Dzongkha accent reads Druk ja, Bhutanese tea", () => {
+  assert.equal(DRUK_JA, "འབྲུག་ཇ།");
+});
+
+test("the home headline joins back into the brand tagline", () => {
+  assert.equal(`${homeCopy.hero.title.lead} ${homeCopy.hero.title.accent}`, TAGLINE);
+});
+
+test("the hero plate label states brand facts, not a claim about the stand-in photo", () => {
+  assert.deepEqual(homeCopy.hero.plateLabel, ["Bhutan Herbal Tea", "Est. 2016"]);
+});
+
+test("why altitude has three rows, each with a title and body", () => {
+  assert.equal(homeCopy.why.rows.length, 3);
+  for (const row of homeCopy.why.rows) assert.ok(row.title && row.body);
 });
