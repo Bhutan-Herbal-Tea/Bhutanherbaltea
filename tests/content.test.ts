@@ -4,7 +4,7 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { contact, heroPhoto, nav, SUMMIT_ALTITUDE_M, type Photo } from "../src/data/site.ts";
 import { featuredTeas, getTea, otherTeas, teas } from "../src/data/teas.ts";
-import { stages, storyPage } from "../src/data/story.ts";
+import { LUNGTA_COLORS, stages, storyPage } from "../src/data/story.ts";
 import { grownPage, people, practices } from "../src/data/grown.ts";
 import { contactPage, homeCopy, notFoundCopy, teaDetailCopy, teasPage } from "../src/data/pages.ts";
 
@@ -66,9 +66,33 @@ test("no Bumthang references remain in content", () => {
   assert.doesNotMatch(JSON.stringify(allContent), /bumthang/i);
 });
 
-test("the story has at least four stages, each with a heading and body", () => {
+test("no em or en dashes in any visible content", () => {
+  assert.doesNotMatch(JSON.stringify(allContent), /[–—]/);
+});
+
+test("every story stage has a heading, body and marker", () => {
   assert.ok(stages.length >= 4);
   for (const stage of stages) {
-    assert.ok(stage.heading.length > 0 && stage.body.length > 0, stage.id);
+    assert.ok(stage.heading && stage.body && stage.marker, stage.id);
   }
+});
+
+test("one label per CTA intent", () => {
+  assert.equal(homeCopy.hero.ctaLabel, "Discover our story");
+  assert.equal(homeCopy.statement.linkLabel, homeCopy.hero.ctaLabel);
+  assert.equal(homeCopy.featured.linkLabel, "See all teas");
+  assert.equal(storyPage.summit.teasLabel, "See all teas");
+  assert.equal(notFoundCopy.teasLabel, "See all teas");
+  assert.equal(homeCopy.contactPanel.linkLabel, "Contact");
+});
+
+test("lungta has the five element colours in traditional order", () => {
+  assert.deepEqual(
+    LUNGTA_COLORS.map((c) => c.name),
+    ["blue", "white", "red", "green", "yellow"],
+  );
+});
+
+test("home hero subtext stays within 20 words", () => {
+  assert.ok(homeCopy.hero.subtext.split(/\s+/).length <= 20);
 });

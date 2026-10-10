@@ -10,14 +10,12 @@ export const grownPage = {
       "Organic and regenerative farming in Thimphu: hand-harvested herbs, carefully dried and packaged without chemical additives.",
   },
   hero: {
-    eyebrow: "How it's grown",
     title: "Grown with care",
     intro: "Organic, hand-harvested and carefully dried on Bhutan's first herbal tea farm.",
     image: { src: "/images/fields/herb-rows.jpg", alt: "Rows of herbs growing on the farm" },
   },
-  practicesSection: { eyebrow: "Our practices", heading: "From soil to sip" },
+  practicesSection: { heading: "From soil to cup" },
   peopleSection: {
-    eyebrow: "The people",
     heading: "The hands behind every cup",
     intro: "The people who plant, tend and harvest our herbs.",
   },

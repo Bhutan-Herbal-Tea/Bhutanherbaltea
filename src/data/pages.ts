@@ -1,14 +1,17 @@
 import type { Photo } from "./site";
 
-type Hero = { eyebrow: string; title: string; intro: string; image: Photo };
+type Hero = { title: string; intro: string; image: Photo };
 
 export const homeCopy = {
-  scrollHint: "Scroll to begin",
-  teaser: {
-    eyebrow: "Grown higher",
+  hero: {
+    subtext: "Certified organic herbal teas, grown slowly above 2,750 metres on Bhutan's first herbal tea farm.",
+    ctaLabel: "Discover our story",
+  },
+  statement: {
     heading: "Above 2,750 metres, everything grows a little slower.",
     body: "Slow growth lets our herbs build up more of the volatile oils that carry flavour, aroma and nutrients.",
     linkLabel: "Discover our story",
+    image: { src: "/images/story/stage-4.jpg", alt: "High slopes above the farm" },
   },
   featured: {
     eyebrow: "Our teas",
@@ -17,16 +20,15 @@ export const homeCopy = {
     linkLabel: "See all teas",
   },
   grown: {
-    eyebrow: "Grown with care",
     heading: "Hand-harvested at their peak",
     body: "Organic and regenerative farming, carefully dried herbs, and nothing added.",
     linkLabel: "How it's grown",
-    image: { src: "/images/people/farmer-1.jpg", alt: "A farmer harvesting herbs by hand" },
+    image: { src: "/images/fields/herb-rows.jpg", alt: "Rows of herbs growing on the farm" },
   },
-  cta: {
-    heading: "Get in touch",
-    body: "Questions about our teas, or where to find them? We'd love to hear from you.",
-    linkLabel: "Contact us",
+  contactPanel: {
+    heading: "Questions about our teas?",
+    body: "Ask us anything, from which tea to try first to where to find us.",
+    linkLabel: "Contact",
   },
 };
 
@@ -36,7 +38,6 @@ export const teasPage: { meta: { title: string; description: string }; hero: Her
     description: "Five certified organic herbal teas grown above 2,750 m in Thimphu, Bhutan.",
   },
   hero: {
-    eyebrow: "Our teas",
     title: "Five teas, grown higher",
     intro: "Certified organic herbal teas from our farm in Thimphu.",
     image: { src: "/images/fields/drying.jpg", alt: "Herbs laid out to dry" },
@@ -44,7 +45,7 @@ export const teasPage: { meta: { title: string; description: string }; hero: Her
 };
 
 export const teaDetailCopy = {
-  eyebrow: "Certified organic · Thimphu",
+  eyebrow: "Certified organic, Thimphu",
   benefitsHeading: "Benefits",
   tasteHeading: "Taste notes",
   brewingHeading: "Brewing",
@@ -63,7 +64,6 @@ export const contactPage = {
     description: "Where to buy Bhutan Herbal Tea and how to get in touch.",
   },
   hero: {
-    eyebrow: "Contact",
     title: "Get in touch",
     intro: "Where to find our teas, and how to reach us.",
     image: { src: "/images/fields/farm.jpg", alt: "The Bhutan Herbal Tea farm in the hills of Thimphu" },
@@ -79,10 +79,10 @@ export const contactPage = {
 
 export const notFoundCopy = {
   title: "Page not found",
-  eyebrow: "404 · Off the trail",
+  eyebrow: "404, off the trail",
   heading: "This path doesn't lead anywhere",
   body: "The page you were looking for isn't here. Let's get you back on the trail.",
   homeLabel: "Back to home",
-  teasLabel: "See our teas",
+  teasLabel: "See all teas",
   image: { src: "/images/story/summit.jpg", alt: "Mountain ridges above the herb fields at sunset" },
 };
