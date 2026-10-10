@@ -10,6 +10,7 @@ type SpecimenPlateProps = {
   preload?: boolean;
   frameClassName?: string;
   imageClassName?: string;
+  labelClassName?: string;
   className?: string;
   children?: ReactNode;
 };
@@ -22,6 +23,7 @@ export function SpecimenPlate({
   preload = false,
   frameClassName = "aspect-4/5",
   imageClassName,
+  labelClassName,
   className,
   children,
 }: SpecimenPlateProps) {
@@ -44,8 +46,15 @@ export function SpecimenPlate({
         <span aria-hidden className="plate-tape plate-tape--br" />
       </div>
       {label && label.length > 0 && (
-        <figcaption className="mt-3 font-mono text-[0.68rem] tracking-[0.2em] text-muted-foreground uppercase">
-          {label.join(" · ")}
+        // One line per item, like a herbarium label; keeps neighbouring plates the same height.
+        <figcaption
+          className={cn("mt-3 font-mono text-[0.68rem] tracking-[0.2em] text-muted-foreground uppercase", labelClassName)}
+        >
+          {label.map((line) => (
+            <span key={line} className="block">
+              {line}
+            </span>
+          ))}
         </figcaption>
       )}
       {children}
