@@ -17,7 +17,7 @@ export function ArrowLink({ href, children, tone = "default", className }: Arrow
       className={cn(
         "group inline-flex items-center gap-2 font-medium underline decoration-2 underline-offset-8 transition-colors",
         tone === "photo"
-          ? "text-mist decoration-saffron hover:text-saffron"
+          ? "text-mist decoration-saffron hover:text-saffron focus-visible:outline-saffron"
           : "text-accent-text decoration-accent-mark hover:decoration-bhutan",
         className,
       )}

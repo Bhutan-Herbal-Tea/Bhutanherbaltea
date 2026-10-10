@@ -51,7 +51,7 @@ export function MobileMenu({ pathname }: { pathname: string }) {
                     className={cn(
                       "inline-block py-2 font-serif text-4xl transition-colors md:text-6xl",
                       active
-                        ? "text-accent-text underline decoration-accent-mark decoration-2 underline-offset-8"
+                        ? "text-accent-text underline decoration-accent-text decoration-2 underline-offset-8"
                         : "text-foreground hover:text-accent-text",
                     )}
                   >

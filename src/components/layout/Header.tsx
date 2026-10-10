@@ -29,7 +29,7 @@ export function Header() {
                       className={cn(
                         "py-2 text-sm tracking-wide transition-colors hover:text-foreground",
                         active
-                          ? "text-foreground underline decoration-accent-mark decoration-2 underline-offset-10"
+                          ? "font-medium text-foreground underline decoration-accent-text decoration-2 underline-offset-10"
                           : "text-muted-foreground",
                       )}
                     >
