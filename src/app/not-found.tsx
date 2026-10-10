@@ -23,7 +23,7 @@ export default function NotFound() {
         <p className="mt-6 max-w-xl text-lead text-mist/80">{notFoundCopy.body}</p>
         <div className="mt-10 flex flex-col gap-4 md:flex-row">
           <ButtonLink href="/">{notFoundCopy.homeLabel}</ButtonLink>
-          <ButtonLink href="/teas" variant="outline">
+          <ButtonLink href="/teas" variant="ink">
             {notFoundCopy.teasLabel}
           </ButtonLink>
         </div>

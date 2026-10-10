@@ -3,18 +3,18 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
+// Focus uses an inset ring: the notch clip-path would cut off an outside outline.
 const buttonVariants = cva(
-  "inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-transparent font-medium tracking-wide whitespace-nowrap transition-colors duration-300 outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "notch inline-flex shrink-0 items-center justify-center gap-2 font-medium tracking-wide whitespace-nowrap outline-none select-none transition-[background-position,background-color,color] duration-500 ease-out active:translate-y-px disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-amber",
-        outline: "border-mist/35 text-mist hover:border-mist hover:bg-mist/5",
-        ghost: "text-mist hover:bg-mist/10",
-        link: "text-saffron underline-offset-8 hover:underline",
+        default: "flag-hover text-ink focus-visible:shadow-[inset_0_0_0_3px_var(--color-ink)]",
+        ink: "bg-ink text-mist hover:bg-ink/85 focus-visible:shadow-[inset_0_0_0_3px_var(--color-saffron)]",
+        ghost: "text-foreground hover:bg-foreground/10 focus-visible:shadow-[inset_0_0_0_2px_var(--ring)]",
       },
       size: {
-        default: "h-10 px-5 text-sm",
+        default: "h-11 px-6 text-sm",
         lg: "h-12 px-7 text-[0.95rem]",
         icon: "size-11",
         "icon-sm": "size-8",
