@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { facts, FARM_PLACE, PLATE_PLACE, SITE_DESCRIPTION } from "../src/data/site.ts";
+import { facts, FARM_PLACE, FARM_VILLAGE, PLATE_PLACE, SITE_DESCRIPTION } from "../src/data/site.ts";
 import { teas } from "../src/data/teas.ts";
 import { stages, storyPage } from "../src/data/story.ts";
 import { grownPage, practices } from "../src/data/grown.ts";
@@ -16,6 +16,14 @@ test("the farm is placed in Bumthang", () => {
     assert.match(tea.shortDescription, /Bumthang/, tea.slug);
     assert.match(tea.description, /Bumthang/, tea.slug);
   }
+});
+
+test("the place-story pages name the village exactly as the client spells it", () => {
+  assert.equal(FARM_VILLAGE, "Damphel Chokorteo / Shingkhar");
+  const altitude = stages.find((stage) => stage.id === "altitude")!;
+  assert.ok(altitude.body.includes(FARM_VILLAGE), "Our Story altitude stage");
+  assert.ok(storyPage.summit.body.includes(FARM_VILLAGE), "Our Story summit");
+  assert.ok(JSON.stringify(practices).includes(FARM_VILLAGE), "How It's Grown practices");
 });
 
 test("Thimphu appears only in the 2015 reunion stage", () => {

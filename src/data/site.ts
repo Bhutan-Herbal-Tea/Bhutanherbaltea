@@ -12,12 +12,14 @@ export const SUMMIT_ALTITUDE_M = 2750;
 
 export const HOME_NAV_LABEL = "Home";
 
-// "Druk Yul", the name of Bhutan in Dzongkha. Verified; any other Dzongkha waits for the client.
-export const DRUK_YUL = "འབྲུག་ཡུལ།";
+// "Druk ja", Bhutanese tea, in Dzongkha (chosen by the user, 2026-10-10). Decorative accent.
+export const DRUK_JA = "འབྲུག་ཇ།";
+export const DRUK_JA_LATIN = "Druk ja";
 
 // Where the herbs grow: Bumthang Dzongkhag, confirmed by the client (2026-10-10).
-// Village given as "Damphel Chokorteo / Shingkhar". TODO: exact spelling before it goes on the site.
 export const FARM_PLACE = "Bumthang";
+// The village, spelled exactly as the client gives it. Used where the page tells the place story.
+export const FARM_VILLAGE = "Damphel Chokorteo / Shingkhar";
 
 // Second line of every tea specimen label: true of every tea, whatever the photo.
 export const PLATE_PLACE = `${FARM_PLACE}, 2,750 m`;

@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
-import { contact, DRUK_YUL, facts, heroPhoto, nav, SUMMIT_ALTITUDE_M, TAGLINE, type Photo } from "../src/data/site.ts";
+import { contact, DRUK_JA, facts, heroPhoto, nav, SUMMIT_ALTITUDE_M, TAGLINE, type Photo } from "../src/data/site.ts";
 import { featuredTeas, getTea, otherTeas, teas } from "../src/data/teas.ts";
 import { LUNGTA_COLORS, stages, storyPage } from "../src/data/story.ts";
 import { grownPage, people, practices } from "../src/data/grown.ts";
@@ -106,8 +106,8 @@ test("the facts band shows the five sourced facts", () => {
   for (const fact of facts) assert.ok(fact.label.length > 0);
 });
 
-test("the Dzongkha accent is the verified name of Bhutan", () => {
-  assert.equal(DRUK_YUL, "འབྲུག་ཡུལ།");
+test("the Dzongkha accent reads Druk ja, Bhutanese tea", () => {
+  assert.equal(DRUK_JA, "འབྲུག་ཇ།");
 });
 
 test("the home headline joins back into the brand tagline", () => {

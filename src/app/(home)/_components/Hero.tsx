@@ -1,4 +1,4 @@
-import { DRUK_YUL, heroPhoto } from "@/data/site";
+import { DRUK_JA, DRUK_JA_LATIN, heroPhoto } from "@/data/site";
 import { homeCopy } from "@/data/pages";
 import { AccentTitle } from "@/components/ui/AccentTitle";
 import { ArrowLink } from "@/components/ui/ArrowLink";
@@ -12,8 +12,8 @@ export function Hero() {
     <section className="container-page grid gap-14 pt-24 pb-16 md:grid-cols-2 md:items-center md:gap-10 md:pt-28 xl:grid-cols-[7fr_5fr] xl:gap-16 xl:pt-32 xl:pb-24">
       <div className="md:order-1">
         <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
-          <span lang="dz" aria-label="Druk Yul" className="font-tibetan text-xl text-forest dark:text-saffron">
-            {DRUK_YUL}
+          <span lang="dz" aria-label={DRUK_JA_LATIN} className="font-tibetan text-xl text-forest dark:text-saffron">
+            {DRUK_JA}
           </span>
           <span className="eyebrow text-accent-text">{place}</span>
         </p>

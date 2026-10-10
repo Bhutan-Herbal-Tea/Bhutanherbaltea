@@ -1,4 +1,4 @@
-import type { Photo } from "./site";
+import { FARM_VILLAGE, type Photo } from "./site.ts";
 
 export type ClimbStageData = {
   id: string;
@@ -32,7 +32,7 @@ export const storyPage = {
   },
   summit: {
     heading: "You've reached the summit",
-    body: "This is where our herbs grow: slowly, in the clean mountain air of Bumthang.",
+    body: `This is where our herbs grow: slowly, in the clean mountain air of ${FARM_VILLAGE}, Bumthang.`,
     teasLabel: "See all teas",
     grownLabel: "How it's grown",
     image: { src: "/images/story/summit.jpg", alt: "Prayer flags on a post at a snowy mountain pass" },
@@ -66,7 +66,7 @@ export const stages: ClimbStageData[] = [
     id: "altitude",
     marker: "Bumthang, above 9,000 feet",
     heading: "Above 2,750 metres",
-    body: "Our herbs are grown and harvested above 9,000 feet in Bumthang, in central Bhutan. Up here, in the cool mountain air, they grow slowly.",
+    body: `Our herbs are grown and harvested above 9,000 feet in ${FARM_VILLAGE}, Bumthang, in central Bhutan. Up here, in the cool mountain air, they grow slowly.`,
     image: { src: "/images/story/stage-4.jpg", alt: "Mountain ridges rising above the clouds" },
   },
   {

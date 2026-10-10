@@ -1,4 +1,4 @@
-import type { Photo } from "./site";
+import { FARM_VILLAGE, type Photo } from "./site.ts";
 
 export type Practice = { title: string; body: string };
 export type Person = { image: Photo; caption: string };
@@ -29,7 +29,7 @@ export const practices: Practice[] = [
   },
   { title: "Hand-harvested", body: "Every herb is picked by hand, at its peak." },
   { title: "Carefully dried", body: "Herbs are carefully dried, then packaged without any chemical additives." },
-  { title: "Small batches", body: "Each tea is crafted in small batches on our farm in Bumthang." },
+  { title: "Small batches", body: `Each tea is crafted in small batches on our farm in ${FARM_VILLAGE}, Bumthang.` },
 ];
 
 // TODO: replace with the client's photos of the farmers and add their captions.
