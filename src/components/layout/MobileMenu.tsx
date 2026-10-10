@@ -20,20 +20,20 @@ export function MobileMenu({ pathname }: { pathname: string }) {
       <SheetTrigger
         aria-label="Open menu"
         aria-expanded={open}
-        className="inline-flex size-11 items-center justify-center rounded-full text-mist transition-colors hover:bg-mist/10 xl:hidden"
+        className="inline-flex size-11 items-center justify-center text-foreground transition-colors hover:bg-foreground/10 xl:hidden"
       >
         <Menu className="size-6" aria-hidden />
       </SheetTrigger>
       <SheetContent
         side="right"
         showCloseButton={false}
-        className="inset-0 h-svh w-full gap-0 border-0 bg-ink p-0 text-mist motion-reduce:transition-none data-[side=right]:w-full data-[side=right]:sm:max-w-none"
+        className="inset-0 h-svh w-full gap-0 border-0 bg-background p-0 text-foreground motion-reduce:transition-none data-[side=right]:w-full data-[side=right]:sm:max-w-none"
       >
         <div className="container-page flex h-16 shrink-0 items-center justify-between">
-          <SheetTitle className="font-serif text-xl text-mist md:text-2xl">{SITE_NAME}</SheetTitle>
+          <SheetTitle className="font-serif text-xl text-foreground md:text-2xl">{SITE_NAME}</SheetTitle>
           <SheetClose
             aria-label="Close menu"
-            className="inline-flex size-11 items-center justify-center rounded-full transition-colors hover:bg-mist/10"
+            className="inline-flex size-11 items-center justify-center transition-colors hover:bg-foreground/10"
           >
             <X className="size-6" aria-hidden />
           </SheetClose>
@@ -49,8 +49,10 @@ export function MobileMenu({ pathname }: { pathname: string }) {
                     aria-current={active ? "page" : undefined}
                     onClick={() => setOpen(false)}
                     className={cn(
-                      "block py-2 font-serif text-4xl transition-colors md:text-6xl",
-                      active ? "text-saffron" : "text-mist hover:text-saffron",
+                      "inline-block py-2 font-serif text-4xl transition-colors md:text-6xl",
+                      active
+                        ? "text-accent-text underline decoration-accent-mark decoration-2 underline-offset-8"
+                        : "text-foreground hover:text-accent-text",
                     )}
                   >
                     {item.label}
@@ -60,7 +62,8 @@ export function MobileMenu({ pathname }: { pathname: string }) {
             })}
           </ul>
         </nav>
-        <p className="container-page pb-10 font-serif text-xl text-mist/70 italic">{TAGLINE}</p>
+        <div aria-hidden className="flag-split h-2 w-full" />
+        <p className="container-page py-8 font-serif text-xl text-muted-foreground italic">{TAGLINE}</p>
       </SheetContent>
     </Sheet>
   );

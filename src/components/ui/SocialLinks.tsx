@@ -19,7 +19,7 @@ export function SocialLinks({ className }: { className?: string }) {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${SITE_NAME} on ${link.label}`}
-              className="inline-flex size-11 items-center justify-center rounded-full border border-mist/25 text-mist transition-colors hover:border-saffron hover:text-saffron"
+              className="notch inline-flex size-11 items-center justify-center bg-foreground/5 text-foreground transition-colors hover:bg-foreground/10 hover:text-accent-text"
             >
               <Icon className="size-5" aria-hidden />
             </a>

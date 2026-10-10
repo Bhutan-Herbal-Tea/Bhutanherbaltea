@@ -3,14 +3,22 @@ import type { ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type ArrowLinkProps = { href: string; children: ReactNode; className?: string };
+type ArrowLinkProps = {
+  href: string;
+  children: ReactNode;
+  tone?: "default" | "photo";
+  className?: string;
+};
 
-export function ArrowLink({ href, children, className }: ArrowLinkProps) {
+export function ArrowLink({ href, children, tone = "default", className }: ArrowLinkProps) {
   return (
     <Link
       href={href}
       className={cn(
-        "group inline-flex items-center gap-2 text-saffron underline-offset-8 hover:underline",
+        "group inline-flex items-center gap-2 font-medium underline decoration-2 underline-offset-8 transition-colors",
+        tone === "photo"
+          ? "text-mist decoration-saffron hover:text-saffron"
+          : "text-accent-text decoration-accent-mark hover:decoration-bhutan",
         className,
       )}
     >

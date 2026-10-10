@@ -7,7 +7,7 @@ export function Wordmark({ className }: { className?: string }) {
     <Link
       href="/"
       aria-label={`${SITE_NAME}, home`}
-      className={cn("font-serif text-xl tracking-wide text-mist md:text-2xl", className)}
+      className={cn("font-serif text-xl tracking-wide text-foreground md:text-2xl", className)}
     >
       {SITE_NAME}
     </Link>

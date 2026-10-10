@@ -4,9 +4,9 @@ import { contact } from "@/data/site";
 import { whatsappHref } from "@/lib/contact";
 import { cn } from "@/lib/utils";
 
-type WhatsAppButtonProps = { label: string; className?: string };
+type WhatsAppButtonProps = { label: string; variant?: "default" | "ink"; className?: string };
 
-export function WhatsAppButton({ label, className }: WhatsAppButtonProps) {
+export function WhatsAppButton({ label, variant = "default", className }: WhatsAppButtonProps) {
   const href = whatsappHref(contact.whatsapp);
   if (!href) return null;
   return (
@@ -14,7 +14,7 @@ export function WhatsAppButton({ label, className }: WhatsAppButtonProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={cn(buttonVariants({ size: "lg" }), className)}
+      className={cn(buttonVariants({ variant, size: "lg" }), className)}
     >
       <MessageCircle className="size-5" aria-hidden />
       {label}
