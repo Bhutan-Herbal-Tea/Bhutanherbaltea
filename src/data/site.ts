@@ -46,6 +46,9 @@ export const nav: NavItem[] = [
   { href: "/contact", label: "Contact" },
 ];
 
+// What the header, mobile menu and footer show. `nav` stays page-only for the sitemap.
+export const mainNav: NavItem[] = [{ href: "/", label: HOME_NAV_LABEL }, ...nav];
+
 export type SocialLinks = { facebook: string; instagram: string };
 
 export type Contact = {

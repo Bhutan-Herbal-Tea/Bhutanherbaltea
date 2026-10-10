@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { nav } from "@/data/site";
+import { mainNav } from "@/data/site";
 import { isActive } from "@/lib/nav";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
@@ -19,7 +19,7 @@ export function Header() {
         <div className="flex items-center gap-1 xl:gap-8">
           <nav aria-label="Main" className="hidden xl:block">
             <ul className="flex gap-10">
-              {nav.map((item) => {
+              {mainNav.map((item) => {
                 const active = isActive(pathname, item.href);
                 return (
                   <li key={item.href}>
@@ -27,10 +27,10 @@ export function Header() {
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "py-2 text-sm tracking-wide transition-colors hover:text-foreground",
+                        "border-b-2 py-1 font-mono text-[0.72rem] tracking-[0.2em] uppercase transition-colors hover:text-foreground",
                         active
-                          ? "font-medium text-foreground underline decoration-accent-text decoration-2 underline-offset-10"
-                          : "text-muted-foreground",
+                          ? "border-forest font-medium text-foreground dark:border-saffron"
+                          : "border-transparent text-muted-foreground",
                       )}
                     >
                       {item.label}

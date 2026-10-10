@@ -4,11 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { HOME_NAV_LABEL, nav, SITE_NAME, TAGLINE } from "@/data/site";
+import { mainNav as items, SITE_NAME, TAGLINE } from "@/data/site";
 import { isActive } from "@/lib/nav";
 import { cn } from "@/lib/utils";
-
-const items = [{ href: "/", label: HOME_NAV_LABEL }, ...nav];
 
 // shadcn Sheet (Base UI Dialog) provides the focus trap, Escape to close,
 // scroll lock and focus return to the trigger.
@@ -62,7 +60,10 @@ export function MobileMenu({ pathname }: { pathname: string }) {
             })}
           </ul>
         </nav>
-        <div aria-hidden className="flag-split h-2 w-full" />
+        <div aria-hidden className="grid h-2 w-full grid-rows-2">
+          <span className="bg-saffron" />
+          <span className="bg-bhutan" />
+        </div>
         <p className="container-page py-8 font-serif text-xl text-muted-foreground italic">{TAGLINE}</p>
       </SheetContent>
     </Sheet>
