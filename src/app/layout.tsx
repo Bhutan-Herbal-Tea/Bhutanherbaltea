@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, DM_Mono, Geist, Noto_Serif_Tibetan } from "next/font/google";
+import { Cormorant_Garamond, DM_Mono, Geist } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL, TAGLINE } from "@/data/site";
 import { themeInitScript } from "@/lib/theme";
@@ -29,12 +30,12 @@ const dmMono = DM_Mono({
   display: "swap",
 });
 
-// Only used for the short Dzongkha line; not worth a preload on every page.
-const notoTibetan = Noto_Serif_Tibetan({
-  subsets: ["tibetan"],
+// Noto Serif Tibetan cut down to the glyphs of DRUK_JA (~3.5 KB instead of ~714 KB).
+// Rebuild it with `npm run assets:dzongkha` if the Dzongkha text changes.
+const notoTibetan = localFont({
+  src: "./fonts/noto-serif-tibetan-subset.woff2",
   variable: "--font-noto-tibetan",
   display: "swap",
-  preload: false,
 });
 
 export const metadata: Metadata = {
