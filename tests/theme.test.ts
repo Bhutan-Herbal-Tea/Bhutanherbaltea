@@ -3,7 +3,19 @@ import assert from "node:assert/strict";
 import vm from "node:vm";
 import { nextTheme, resolveTheme, THEME_STORAGE_KEY, themeInitScript } from "../src/lib/theme.ts";
 
-function runInitScript(stored: string | null, prefersDark: boolean, storageBlocked = false) {
+type FakeNode = { nodeType: number; textContent: string; removed?: boolean; remove: () => void };
+
+function fakeNode(nodeType: number, textContent = ""): FakeNode {
+  const node: FakeNode = { nodeType, textContent, remove: () => { node.removed = true; } };
+  return node;
+}
+
+function runInitScript(
+  stored: string | null,
+  prefersDark: boolean,
+  storageBlocked = false,
+  headNodes: FakeNode[] = [],
+) {
   const root = { dataset: {} as Record<string, string> };
   const context = {
     localStorage: {
@@ -13,11 +25,25 @@ function runInitScript(stored: string | null, prefersDark: boolean, storageBlock
       },
     },
     window: { matchMedia: () => ({ matches: prefersDark }) },
-    document: { documentElement: root },
+    document: { documentElement: root, head: { childNodes: headNodes } },
   };
   vm.runInNewContext(themeInitScript, context);
   return root.dataset.theme;
 }
+
+test("the inline script removes blank text nodes a host injects into <head> before hydration", () => {
+  // Netlify inserts "\n<!-- This site is hosted on Netlify ... -->" after <meta charset>;
+  // the newline text node makes React's hydration of <head> fail.
+  const meta = fakeNode(1);
+  const newline = fakeNode(3, "\n");
+  const comment = fakeNode(8, " This site is hosted on Netlify ");
+  const realText = fakeNode(3, "keep me");
+  runInitScript(null, false, false, [meta, newline, comment, realText]);
+  assert.equal(newline.removed, true, "blank text node removed");
+  assert.equal(meta.removed, undefined, "elements kept");
+  assert.equal(comment.removed, undefined, "comments kept (React ignores them)");
+  assert.equal(realText.removed, undefined, "non-blank text kept");
+});
 
 test("resolveTheme prefers a valid stored choice, else the system setting", () => {
   assert.equal(resolveTheme("dark", false), "dark");
