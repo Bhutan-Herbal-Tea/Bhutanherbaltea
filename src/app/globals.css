@@ -2,6 +2,9 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
+/* Short viewports, e.g. phones held sideways (667x375). */
+@custom-variant short (@media (max-height: 30rem));
+
 @theme {
   --color-ink: #0e0e0c;
   --color-mist: #f4f1ea;
