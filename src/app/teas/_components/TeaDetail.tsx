@@ -15,7 +15,7 @@ export function TeaDetail({ tea, others }: TeaDetailProps) {
         <div className="notch relative mx-auto aspect-4/5 w-full overflow-hidden bg-card md:w-[70%] xl:sticky xl:top-28 xl:w-full xl:self-start">
           <Image
             src={tea.image}
-            alt={`${tea.name} ${copy.imageAltSuffix}`}
+            alt={tea.imageAlt}
             fill
             preload
             sizes="(min-width: 1280px) 45vw, (min-width: 768px) 70vw, 100vw"

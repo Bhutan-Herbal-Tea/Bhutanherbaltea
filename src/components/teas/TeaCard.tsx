@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Tea } from "@/data/teas";
-import { teaDetailCopy } from "@/data/pages";
 import { ImageReveal } from "@/components/ui/ImageReveal";
 
 // headingLevel keeps the outline valid: h3 under a section h2, h2 directly under the page h1.
@@ -15,7 +14,7 @@ export function TeaCard({ tea, sizes, headingLevel = 3 }: TeaCardProps) {
         <div className="notch relative aspect-4/5 overflow-hidden bg-card">
           <Image
             src={tea.image}
-            alt={`${tea.name} ${teaDetailCopy.imageAltSuffix}`}
+            alt={tea.imageAlt}
             fill
             sizes={sizes}
             className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"

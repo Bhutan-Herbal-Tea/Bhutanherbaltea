@@ -40,7 +40,7 @@ export const teasPage: { meta: { title: string; description: string }; hero: Her
   hero: {
     title: "Five teas, grown higher",
     intro: "Certified organic herbal teas from our farm in Thimphu.",
-    image: { src: "/images/fields/drying.jpg", alt: "Herbs laid out to dry" },
+    image: { src: "/images/fields/drying.jpg", alt: "Bunches of herbs hung up to dry" },
   },
 };
 
@@ -66,9 +66,9 @@ export const contactPage = {
   hero: {
     title: "Get in touch",
     intro: "Where to find our teas, and how to reach us.",
-    image: { src: "/images/fields/farm.jpg", alt: "The Bhutan Herbal Tea farm in the hills of Thimphu" },
+    image: { src: "/images/fields/farm.jpg", alt: "Golden fields below a Bhutanese building and forested mountains" },
   } satisfies Hero,
-  sideImage: { src: "/images/fields/herb-rows.jpg", alt: "Rows of herbs growing on the farm" },
+  sideImage: { src: "/images/fields/herb-rows.jpg", alt: "Rows of young plants in a field below mountains" },
   getInTouchHeading: "Talk to us",
   comingSoon: "Contact details coming soon.",
   followHeading: "Follow us",
@@ -84,5 +84,5 @@ export const notFoundCopy = {
   body: "The page you were looking for isn't here. Let's get you back on the trail.",
   homeLabel: "Back to home",
   teasLabel: "See all teas",
-  image: { src: "/images/story/summit.jpg", alt: "Mountain ridges above the herb fields at sunset" },
+  image: { src: "/images/story/summit.jpg", alt: "Prayer flags on a post at a snowy mountain pass" },
 };

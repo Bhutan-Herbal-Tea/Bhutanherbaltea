@@ -17,7 +17,7 @@ export type Photo = { src: string; alt: string };
 // TODO: replace with the client's photo; update the alt text to describe the real image.
 export const heroPhoto: Photo = {
   src: "/images/hero/thimphu-fields.jpg",
-  alt: "Herb fields on a mountainside above Thimphu, Bhutan",
+  alt: "Terraced fields and farmhouses on a hillside in Bhutan",
 };
 
 export type NavItem = { href: string; label: string };

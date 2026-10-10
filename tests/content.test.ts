@@ -50,7 +50,7 @@ test("benefits stay empty until the client approves wording (update this test wh
 });
 
 test("every image referenced in content exists in public/ and has alt text", () => {
-  const photos = [...collectPhotos(allContent), ...teas.map((t) => ({ src: t.image, alt: t.name }))];
+  const photos = [...collectPhotos(allContent), ...teas.map((t) => ({ src: t.image, alt: t.imageAlt }))];
   assert.ok(photos.length >= 20, `expected at least 20 photos, found ${photos.length}`);
   for (const photo of photos) {
     assert.ok(existsSync(join(process.cwd(), "public", photo.src)), `missing file ${photo.src}`);

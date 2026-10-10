@@ -12,14 +12,14 @@ export const grownPage = {
   hero: {
     title: "Grown with care",
     intro: "Organic, hand-harvested and carefully dried on Bhutan's first herbal tea farm.",
-    image: { src: "/images/fields/herb-rows.jpg", alt: "Rows of herbs growing on the farm" },
+    image: { src: "/images/fields/herb-rows.jpg", alt: "Rows of young plants in a field below mountains" },
   },
   practicesSection: { heading: "From soil to cup" },
   peopleSection: {
     heading: "The hands behind every cup",
     intro: "The people who plant, tend and harvest our herbs.",
   },
-  closingImage: { src: "/images/fields/drying.jpg", alt: "Herbs laid out to dry" },
+  closingImage: { src: "/images/fields/drying.jpg", alt: "Bunches of herbs hung up to dry" },
 };
 
 export const practices: Practice[] = [
@@ -35,8 +35,8 @@ export const practices: Practice[] = [
 // TODO: replace with the client's photos of the farmers and add their captions.
 // Captions render only when filled in.
 export const people: Person[] = [
-  { image: { src: "/images/people/farmer-1.jpg", alt: "A farmer harvesting herbs by hand" }, caption: "" },
-  { image: { src: "/images/people/farmer-2.jpg", alt: "A farmer tending young herb plants" }, caption: "" },
-  { image: { src: "/images/people/farmer-3.jpg", alt: "A farmer carrying a basket of herbs" }, caption: "" },
-  { image: { src: "/images/people/farmer-4.jpg", alt: "Farmers working in the herb fields" }, caption: "" },
+  { image: { src: "/images/people/farmer-1.jpg", alt: "A person working among rows of tea bushes" }, caption: "" },
+  { image: { src: "/images/people/farmer-2.jpg", alt: "Hands holding freshly picked herbs" }, caption: "" },
+  { image: { src: "/images/people/farmer-3.jpg", alt: "A basket of freshly cut herbs" }, caption: "" },
+  { image: { src: "/images/people/farmer-4.jpg", alt: "Hands sorting herbs on a wooden table" }, caption: "" },
 ];
