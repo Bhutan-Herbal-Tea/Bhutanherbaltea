@@ -19,9 +19,9 @@ export const teas: Tea[] = [
     slug: "chamomile",
     name: "Chamomile",
     botanical: "Matricaria chamomilla",
-    shortDescription: "Chamomile flowers, grown slowly above 2,750 m in Thimphu.",
+    shortDescription: "Chamomile flowers, grown slowly above 2,750 m in Bumthang.",
     description:
-      "Chamomile flowers from our farm in Thimphu, grown above 2,750 m, hand-harvested at their peak and carefully dried. Certified organic and one of our three Brand Bhutan certified teas.",
+      "Chamomile flowers from our farm in Bumthang, grown above 2,750 m, hand-harvested at their peak and carefully dried. Certified organic and one of our three Brand Bhutan certified teas.",
     benefits: [],
     image: "/images/teas/chamomile.jpg",
     imageAlt: "Chamomile flowers in bloom",
@@ -31,9 +31,9 @@ export const teas: Tea[] = [
     slug: "peppermint",
     name: "Peppermint",
     botanical: "Mentha × piperita",
-    shortDescription: "Peppermint leaves, grown slowly above 2,750 m in Thimphu.",
+    shortDescription: "Peppermint leaves, grown slowly above 2,750 m in Bumthang.",
     description:
-      "Peppermint from our farm in Thimphu, grown above 2,750 m, hand-harvested at its peak and carefully dried. Certified organic and one of our three Brand Bhutan certified teas.",
+      "Peppermint from our farm in Bumthang, grown above 2,750 m, hand-harvested at its peak and carefully dried. Certified organic and one of our three Brand Bhutan certified teas.",
     benefits: [],
     image: "/images/teas/peppermint.jpg",
     imageAlt: "Fresh mint leaves",
@@ -43,9 +43,9 @@ export const teas: Tea[] = [
     slug: "lemon-verbena",
     name: "Lemon Verbena",
     botanical: "Aloysia citrodora",
-    shortDescription: "Lemon verbena leaves, grown slowly above 2,750 m in Thimphu.",
+    shortDescription: "Lemon verbena leaves, grown slowly above 2,750 m in Bumthang.",
     description:
-      "Lemon verbena from our farm in Thimphu, grown above 2,750 m, hand-harvested at its peak and carefully dried. Certified organic and one of our three Brand Bhutan certified teas.",
+      "Lemon verbena from our farm in Bumthang, grown above 2,750 m, hand-harvested at its peak and carefully dried. Certified organic and one of our three Brand Bhutan certified teas.",
     benefits: [],
     image: "/images/teas/lemon-verbena.jpg",
     imageAlt: "Leafy green herb stems",
@@ -55,9 +55,9 @@ export const teas: Tea[] = [
     slug: "sea-buckthorn",
     name: "Sea Buckthorn",
     botanical: "Hippophae", // genus only: the Himalayan species grown is unknown
-    shortDescription: "Sea buckthorn, grown slowly above 2,750 m in Thimphu.",
+    shortDescription: "Sea buckthorn, grown slowly above 2,750 m in Bumthang.",
     description:
-      "Sea buckthorn from our farm in Thimphu, grown above 2,750 m, hand-harvested at its peak and carefully dried. Certified organic and packaged without chemical additives.",
+      "Sea buckthorn from our farm in Bumthang, grown above 2,750 m, hand-harvested at its peak and carefully dried. Certified organic and packaged without chemical additives.",
     benefits: [],
     image: "/images/teas/sea-buckthorn.jpg",
     imageAlt: "Orange sea buckthorn berries on a branch",
@@ -66,9 +66,9 @@ export const teas: Tea[] = [
     slug: "hypericum",
     name: "Hypericum",
     botanical: "Hypericum", // genus only: species unknown
-    shortDescription: "Hypericum, grown slowly above 2,750 m in Thimphu.",
+    shortDescription: "Hypericum, grown slowly above 2,750 m in Bumthang.",
     description:
-      "Hypericum from our farm in Thimphu, grown above 2,750 m, hand-harvested at its peak and carefully dried. Certified organic and packaged without chemical additives.",
+      "Hypericum from our farm in Bumthang, grown above 2,750 m, hand-harvested at its peak and carefully dried. Certified organic and packaged without chemical additives.",
     benefits: [],
     image: "/images/teas/hypericum.jpg",
     imageAlt: "Yellow hypericum flowers",

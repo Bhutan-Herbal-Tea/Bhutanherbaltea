@@ -7,7 +7,7 @@ export const grownPage = {
   meta: {
     title: "How It's Grown",
     description:
-      "Organic and regenerative farming in Thimphu: hand-harvested herbs, carefully dried and packaged without chemical additives.",
+      "Organic and regenerative farming in Bumthang: hand-harvested herbs, carefully dried and packaged without chemical additives.",
   },
   hero: {
     title: "Grown with care",
@@ -29,7 +29,7 @@ export const practices: Practice[] = [
   },
   { title: "Hand-harvested", body: "Every herb is picked by hand, at its peak." },
   { title: "Carefully dried", body: "Herbs are carefully dried, then packaged without any chemical additives." },
-  { title: "Small batches", body: "Each tea is crafted in small batches on our farm in Thimphu." },
+  { title: "Small batches", body: "Each tea is crafted in small batches on our farm in Bumthang." },
 ];
 
 // TODO: replace with the client's photos of the farmers and add their captions.

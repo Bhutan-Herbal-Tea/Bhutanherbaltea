@@ -23,7 +23,7 @@ export const storyPage = {
   meta: {
     title: "Our Story",
     description:
-      "From a meeting in New York to Bhutan's first herbal tea farm: climb from sea level to our fields above 2,750 m in Thimphu.",
+      "From a meeting in New York to Bhutan's first herbal tea farm: climb from sea level to our fields above 2,750 m in Bumthang.",
   },
   hero: {
     title: "Grown higher",
@@ -32,7 +32,7 @@ export const storyPage = {
   },
   summit: {
     heading: "You've reached the summit",
-    body: "This is where our herbs grow: slowly, in the clean mountain air above Thimphu.",
+    body: "This is where our herbs grow: slowly, in the clean mountain air of Bumthang.",
     teasLabel: "See all teas",
     grownLabel: "How it's grown",
     image: { src: "/images/story/summit.jpg", alt: "Prayer flags on a post at a snowy mountain pass" },
@@ -64,9 +64,9 @@ export const stages: ClimbStageData[] = [
   },
   {
     id: "altitude",
-    marker: "Above 9,000 feet",
+    marker: "Bumthang, above 9,000 feet",
     heading: "Above 2,750 metres",
-    body: "Our herbs are grown and harvested above 9,000 feet. Up here, in the cool mountain air, they grow slowly.",
+    body: "Our herbs are grown and harvested above 9,000 feet in Bumthang, in central Bhutan. Up here, in the cool mountain air, they grow slowly.",
     image: { src: "/images/story/stage-4.jpg", alt: "Mountain ridges rising above the clouds" },
   },
   {

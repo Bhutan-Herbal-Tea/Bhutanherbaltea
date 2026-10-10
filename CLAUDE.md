@@ -1,13 +1,13 @@
 # Bhutan Herbal Tea — Website
 
-Client showcase website for **Bhutan Herbal Tea**, a Bhutanese brand of organic, high-altitude herbal teas grown in Thimphu, Bhutan. Tagline: **"Wellness in Every Sip."**
+Client showcase website for **Bhutan Herbal Tea**, a Bhutanese brand of organic, high-altitude herbal teas grown in Bumthang, Bhutan. Tagline: **"Wellness in Every Sip."**
 
 ## Known facts
 
 Source: [Daily Bhutan, "Brand Bhutan: Bhutan Herbal Tea" (2023)](https://dailybhutan.com/article/brand-bhutan-bhutan-herbal-tea). Client to confirm before launch.
 
 - Founded March 2016 by **Rinzin Wangchuk** and **Wangchuk Kuenga**, who first met in New York in 2007 and reconvened in Thimphu in 2015.
-- Farm in **Thimphu**. "The first and only herbal tea farm in Bhutan."
+- Farm in **Bumthang** Dzongkhag, confirmed by the client (2026-10-10); the article itself names no farm location. Village given as "Damphel Chokorteo / Shingkhar"; not shown on the site until the exact spelling is confirmed. "The first and only herbal tea farm in Bhutan." Thimphu appears only as where the founders reconvened in 2015 (and where Wangchuk Kuenga grew herbs at Yusipang, 2009 to 2015).
 - Herbs grown and harvested **above 9,000 ft (2,750 m)**.
 - Five certified organic teas: **Chamomile, Peppermint, Lemon Verbena, Sea Buckthorn, Hypericum**. Chamomile, Peppermint and Lemon Verbena carry Brand Bhutan certification.
 - Herbs are hand-harvested at their peak, carefully dried and packaged without chemical additives. 100% organic.

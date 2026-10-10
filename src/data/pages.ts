@@ -6,7 +6,7 @@ export type AccentHeading = { lead: string; accent: string; tail?: string };
 
 export const homeCopy = {
   hero: {
-    place: "Thimphu, Bhutan · 2,750 m",
+    place: "Bumthang, Bhutan · 2,750 m",
     title: { lead: "Wellness in Every", accent: "Sip." } satisfies AccentHeading,
     subtext: "Certified organic herbal teas, grown slowly above 2,750 metres on Bhutan's first herbal tea farm.",
     ctaLabel: "Discover our story",
@@ -44,17 +44,17 @@ export const homeCopy = {
 export const teasPage: { meta: { title: string; description: string }; hero: Hero } = {
   meta: {
     title: "Our Teas",
-    description: "Five certified organic herbal teas grown above 2,750 m in Thimphu, Bhutan.",
+    description: "Five certified organic herbal teas grown above 2,750 m in Bumthang, Bhutan.",
   },
   hero: {
     title: "Five teas, grown higher",
-    intro: "Certified organic herbal teas from our farm in Thimphu.",
+    intro: "Certified organic herbal teas from our farm in Bumthang.",
     image: { src: "/images/fields/drying.jpg", alt: "Bunches of herbs hung up to dry" },
   },
 };
 
 export const teaDetailCopy = {
-  eyebrow: "Certified organic, Thimphu",
+  eyebrow: "Certified organic, Bumthang",
   organicLabel: "Certified organic",
   benefitsHeading: "Benefits",
   tasteHeading: "Taste notes",

@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ImageResponse } from "next/og";
-import { SITE_NAME, SUMMIT_ALTITUDE_M, TAGLINE } from "@/data/site";
+import { FARM_PLACE, SITE_NAME, SUMMIT_ALTITUDE_M, TAGLINE } from "@/data/site";
 import { formatAltitude } from "@/lib/altitude";
 
 export const alt = `${SITE_NAME}: ${TAGLINE}`;
@@ -11,7 +11,7 @@ export const contentType = "image/png";
 export default async function OpengraphImage() {
   const logo = await readFile(join(process.cwd(), "public", "logo.png"));
   const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
-  const line = `Organic herbal teas grown above ${formatAltitude(SUMMIT_ALTITUDE_M)} in Thimphu, Bhutan`;
+  const line = `Organic herbal teas grown above ${formatAltitude(SUMMIT_ALTITUDE_M)} in ${FARM_PLACE}, Bhutan`;
 
   return new ImageResponse(
     (

@@ -1,7 +1,7 @@
 export const SITE_NAME = "Bhutan Herbal Tea";
 export const TAGLINE = "Wellness in Every Sip.";
 export const SITE_DESCRIPTION =
-  "Certified organic herbal teas grown above 2,750 m in Thimphu, Bhutan. Hand-harvested at their peak and packaged without chemical additives.";
+  "Certified organic herbal teas grown above 2,750 m in Bumthang, Bhutan. Hand-harvested at their peak and packaged without chemical additives.";
 export const CLOSING_LINE = "Drink tea that heals you and heals the earth.";
 
 // Netlify sets URL at build time. TODO: switch to the custom domain once the client has one.
@@ -15,14 +15,18 @@ export const HOME_NAV_LABEL = "Home";
 // "Druk Yul", the name of Bhutan in Dzongkha. Verified; any other Dzongkha waits for the client.
 export const DRUK_YUL = "འབྲུག་ཡུལ།";
 
+// Where the herbs grow: Bumthang Dzongkhag, confirmed by the client (2026-10-10).
+// Village given as "Damphel Chokorteo / Shingkhar". TODO: exact spelling before it goes on the site.
+export const FARM_PLACE = "Bumthang";
+
 // Second line of every tea specimen label: true of every tea, whatever the photo.
-export const PLATE_PLACE = "Thimphu, 2,750 m";
+export const PLATE_PLACE = `${FARM_PLACE}, 2,750 m`;
 
 export type Fact = { value: string; label: string };
 
 // Daily Bhutan (2023). TODO: client to confirm.
 export const facts: Fact[] = [
-  { value: "2016", label: "Founded in Thimphu" },
+  { value: "2016", label: "Year founded" },
   { value: "2,750 m", label: "Grown and harvested above" },
   { value: "5", label: "Certified organic teas" },
   { value: "3", label: "Brand Bhutan certified" },

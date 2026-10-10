@@ -62,10 +62,6 @@ test("the summit altitude matches the source article", () => {
   assert.equal(SUMMIT_ALTITUDE_M, 2750);
 });
 
-test("no Bumthang references remain in content", () => {
-  assert.doesNotMatch(JSON.stringify(allContent), /bumthang/i);
-});
-
 test("no em or en dashes in any visible content", () => {
   assert.doesNotMatch(JSON.stringify(allContent), /[–—]/);
 });
