@@ -15,7 +15,7 @@ export function TeaGrid({ teas }: { teas: Tea[] }) {
             index % 3 === 1 && "xl:translate-y-20",
           )}
         >
-          <TeaCard tea={tea} sizes="(min-width: 1280px) 380px, (min-width: 768px) 50vw, 100vw" />
+          <TeaCard tea={tea} headingLevel={2} sizes="(min-width: 1280px) 380px, (min-width: 768px) 50vw, 100vw" />
         </li>
       ))}
     </ul>

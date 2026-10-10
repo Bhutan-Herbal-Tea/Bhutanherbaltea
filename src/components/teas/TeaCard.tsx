@@ -4,9 +4,11 @@ import type { Tea } from "@/data/teas";
 import { teaDetailCopy } from "@/data/pages";
 import { ImageReveal } from "@/components/ui/ImageReveal";
 
-type TeaCardProps = { tea: Tea; sizes: string };
+// headingLevel keeps the outline valid: h3 under a section h2, h2 directly under the page h1.
+type TeaCardProps = { tea: Tea; sizes: string; headingLevel?: 2 | 3 };
 
-export function TeaCard({ tea, sizes }: TeaCardProps) {
+export function TeaCard({ tea, sizes, headingLevel = 3 }: TeaCardProps) {
+  const Heading = headingLevel === 2 ? "h2" : "h3";
   return (
     <Link href={`/teas/${tea.slug}`} className="group block">
       <ImageReveal>
@@ -20,9 +22,9 @@ export function TeaCard({ tea, sizes }: TeaCardProps) {
           />
         </div>
       </ImageReveal>
-      <h3 className="mt-5 font-serif text-2xl text-foreground decoration-accent-mark decoration-2 underline-offset-8 group-hover:underline md:text-[1.75rem]">
+      <Heading className="mt-5 font-serif text-2xl text-foreground decoration-accent-mark decoration-2 underline-offset-8 group-hover:underline md:text-[1.75rem]">
         {tea.name}
-      </h3>
+      </Heading>
       <p className="mt-2 text-muted-foreground">{tea.shortDescription}</p>
     </Link>
   );
