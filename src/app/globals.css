@@ -166,15 +166,11 @@
   }
 }
 
-/* Bhutan's flag: saffron over orange, split on the diagonal. */
-@utility flag-split {
-  background-image: linear-gradient(to bottom right, var(--color-saffron) 50%, var(--color-bhutan) 50%);
-}
-
-/* Primary button: forest at rest; on hover the flag split sweeps in from the left. */
+/* Primary button: forest at rest; on hover the flag's colours, saffron over orange in flat
+   bands (no diagonals in this design), sweep in from the left. */
 @utility flag-sweep {
   background-color: var(--color-forest);
-  background-image: linear-gradient(to bottom right, var(--color-saffron) 50%, var(--color-bhutan) 50%);
+  background-image: linear-gradient(to bottom, var(--color-saffron) 50%, var(--color-bhutan) 50%);
   background-repeat: no-repeat;
   background-size: 0% 100%;
   transition:
