@@ -127,12 +127,14 @@ All editable content lives in `src/data/`, never hard-coded in components.
 export type Tea = {
   slug: string;          // e.g. "sea-buckthorn"
   name: string;
+  botanical: string;     // Latin name on the specimen label (client to confirm species)
   shortDescription: string;
   description: string;
   benefits: string[];    // empty until the client supplies approved wording
   tasteNotes?: string;   // only if the client provides it
   brewing?: string;      // only if the client provides it
   image: string;         // path under /public/images/teas/
+  imageAlt: string;      // describes the actual photo
   accent?: string;       // optional colour from the box design
   featured?: boolean;    // shown on the home page
 };

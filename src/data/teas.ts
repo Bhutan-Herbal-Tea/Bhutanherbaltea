@@ -1,6 +1,7 @@
 export type Tea = {
   slug: string;
   name: string;
+  botanical: string; // Latin name for the specimen label. TODO: client to confirm species
   shortDescription: string;
   description: string;
   benefits: string[]; // empty until the client supplies approved wording
@@ -17,6 +18,7 @@ export const teas: Tea[] = [
   {
     slug: "chamomile",
     name: "Chamomile",
+    botanical: "Matricaria chamomilla",
     shortDescription: "Chamomile flowers, grown slowly above 2,750 m in Thimphu.",
     description:
       "Chamomile flowers from our farm in Thimphu, grown above 2,750 m, hand-harvested at their peak and carefully dried. Certified organic and one of our three Brand Bhutan certified teas.",
@@ -28,6 +30,7 @@ export const teas: Tea[] = [
   {
     slug: "peppermint",
     name: "Peppermint",
+    botanical: "Mentha × piperita",
     shortDescription: "Peppermint leaves, grown slowly above 2,750 m in Thimphu.",
     description:
       "Peppermint from our farm in Thimphu, grown above 2,750 m, hand-harvested at its peak and carefully dried. Certified organic and one of our three Brand Bhutan certified teas.",
@@ -39,6 +42,7 @@ export const teas: Tea[] = [
   {
     slug: "lemon-verbena",
     name: "Lemon Verbena",
+    botanical: "Aloysia citrodora",
     shortDescription: "Lemon verbena leaves, grown slowly above 2,750 m in Thimphu.",
     description:
       "Lemon verbena from our farm in Thimphu, grown above 2,750 m, hand-harvested at its peak and carefully dried. Certified organic and one of our three Brand Bhutan certified teas.",
@@ -50,6 +54,7 @@ export const teas: Tea[] = [
   {
     slug: "sea-buckthorn",
     name: "Sea Buckthorn",
+    botanical: "Hippophae", // genus only: the Himalayan species grown is unknown
     shortDescription: "Sea buckthorn, grown slowly above 2,750 m in Thimphu.",
     description:
       "Sea buckthorn from our farm in Thimphu, grown above 2,750 m, hand-harvested at its peak and carefully dried. Certified organic and packaged without chemical additives.",
@@ -60,6 +65,7 @@ export const teas: Tea[] = [
   {
     slug: "hypericum",
     name: "Hypericum",
+    botanical: "Hypericum", // genus only: species unknown
     shortDescription: "Hypericum, grown slowly above 2,750 m in Thimphu.",
     description:
       "Hypericum from our farm in Thimphu, grown above 2,750 m, hand-harvested at its peak and carefully dried. Certified organic and packaged without chemical additives.",

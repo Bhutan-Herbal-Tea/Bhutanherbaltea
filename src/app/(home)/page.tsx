@@ -1,17 +1,9 @@
-import { ContactPanel } from "./_components/ContactPanel";
-import { FeaturedTeas } from "./_components/FeaturedTeas";
-import { GrownStrip } from "./_components/GrownStrip";
-import { Hero } from "./_components/Hero";
-import { StatementBand } from "./_components/StatementBand";
+import { TAGLINE } from "@/data/site";
 
 export default function HomePage() {
   return (
-    <>
-      <Hero />
-      <StatementBand />
-      <FeaturedTeas />
-      <GrownStrip />
-      <ContactPanel />
-    </>
+    <div className="container-page pt-32 pb-24">
+      <h1 className="font-serif text-display text-foreground">{TAGLINE}</h1>
+    </div>
   );
 }

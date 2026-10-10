@@ -2,29 +2,38 @@ import type { Photo } from "./site";
 
 type Hero = { title: string; intro: string; image: Photo };
 
+export type AccentHeading = { lead: string; accent: string; tail?: string };
+
 export const homeCopy = {
   hero: {
+    place: "Thimphu, Bhutan · 2,750 m",
+    title: { lead: "Wellness in Every", accent: "Sip." } satisfies AccentHeading,
     subtext: "Certified organic herbal teas, grown slowly above 2,750 metres on Bhutan's first herbal tea farm.",
     ctaLabel: "Discover our story",
+    teasLabel: "See all teas",
+    plateLabel: ["Bhutan Herbal Tea", "Est. 2016"],
   },
-  statement: {
-    heading: "Above 2,750 metres, everything grows a little slower.",
-    body: "Slow growth lets our herbs build up more of the volatile oils that carry flavour, aroma and nutrients.",
+  factsLabel: "Bhutan Herbal Tea in numbers",
+  why: {
+    eyebrow: "Grown higher",
+    title: { lead: "Why", accent: "altitude", tail: "matters" } satisfies AccentHeading,
+    rows: [
+      { title: "Slow growth", body: "In the cool mountain air above 2,750 metres, our herbs grow slowly." },
+      {
+        title: "More volatile oils",
+        body: "Growing slowly, the plants build up more of the volatile oils that carry flavour and fragrance.",
+      },
+      { title: "Richer in the cup", body: "That shows in every cup: richer flavour, deeper aroma and more nutrients." },
+    ],
     linkLabel: "Discover our story",
-    image: { src: "/images/story/stage-4.jpg", alt: "High slopes above the farm" },
   },
   featured: {
-    eyebrow: "Our teas",
-    heading: "Brand Bhutan certified",
-    body: "Chamomile, Peppermint and Lemon Verbena carry Brand Bhutan certification. All five of our teas are certified organic.",
+    eyebrow: "Brand Bhutan certified",
+    title: { lead: "Three teas carry", accent: "Brand Bhutan", tail: "certification" } satisfies AccentHeading,
+    body: "Chamomile, Peppermint and Lemon Verbena. All five of our teas are certified organic.",
     linkLabel: "See all teas",
   },
-  grown: {
-    heading: "Hand-harvested at their peak",
-    body: "Organic and regenerative farming, carefully dried herbs, and nothing added.",
-    linkLabel: "How it's grown",
-    image: { src: "/images/fields/herb-rows.jpg", alt: "Rows of herbs growing on the farm" },
-  },
+  quoteLabel: "Our promise",
   contactPanel: {
     heading: "Questions about our teas?",
     body: "Ask us anything, from which tea to try first to where to find us.",
@@ -46,10 +55,10 @@ export const teasPage: { meta: { title: string; description: string }; hero: Her
 
 export const teaDetailCopy = {
   eyebrow: "Certified organic, Thimphu",
+  organicLabel: "Certified organic",
   benefitsHeading: "Benefits",
   tasteHeading: "Taste notes",
   brewingHeading: "Brewing",
-  imageAltSuffix: "tea",
   whereToBuy: {
     heading: "Where to buy",
     body: "Find our teas at our stockists, or get in touch with us directly.",
