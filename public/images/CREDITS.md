@@ -17,9 +17,10 @@ Replace each file with the client's own photo of the same name, then update or r
 | `story/stage-6.jpg` | A cup of tea among dried herbs | Drew Jemmett | https://unsplash.com/photos/qEcWgrTG578 |
 | `story/summit.jpg` | Prayer flags at a snowy mountain pass | Luc Santeramo | https://unsplash.com/photos/9uylKZlgW_0 |
 | `teas/chamomile.jpg` | Chamomile flowers in bloom | Chirag Saini | https://unsplash.com/photos/m_osD-h26dI |
-| `teas/peppermint.jpg` | Fresh mint leaves | SIMON LEE | https://unsplash.com/photos/bHWRSq8fUUE |
+| `teas/mint.jpg` | Fresh mint leaves | SIMON LEE | https://unsplash.com/photos/bHWRSq8fUUE |
 | `teas/lemon-verbena.jpg` | Leafy green herb stems | Alejandro Piñero Amerio | https://unsplash.com/photos/_zdARSmCZh4 |
-| `teas/sea-buckthorn.jpg` | Orange sea buckthorn berries | Juneta Jurgaityte | https://unsplash.com/photos/UEsg8t4Oky4 |
+| `teas/himalayan-sea-berry.jpg` | Orange sea buckthorn berries | Juneta Jurgaityte | https://unsplash.com/photos/UEsg8t4Oky4 |
+| `teas/chrysanthemum.jpg` | Yellow chrysanthemum flowers | Yang Yu | https://unsplash.com/photos/RHjqD23qfHs |
 | `teas/hypericum.jpg` | Yellow hypericum flowers | Ronin | https://unsplash.com/photos/1-Qg951Wwfs |
 | `people/farmer-1.jpg` | A person working among tea bushes | 一只猫的橘 | https://unsplash.com/photos/Mw1bnPE4MI0 |
 | `people/farmer-2.jpg` | Hands holding freshly picked herbs | Charlotte Thomas | https://unsplash.com/photos/9zVMF1HJiic |

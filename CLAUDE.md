@@ -9,8 +9,16 @@ Source: [Daily Bhutan, "Brand Bhutan: Bhutan Herbal Tea" (2023)](https://dailybh
 - Founded March 2016 by **Rinzin Wangchuk** and **Wangchuk Kuenga**, who first met in New York in 2007 and reconvened in Thimphu in 2015.
 - Farm in **Bumthang** Dzongkhag, confirmed by the client (2026-10-10); the article itself names no farm location. Village: **Damphel Chokorteo / Shingkhar** (exact client spelling, `FARM_VILLAGE`), named on Our Story and How It's Grown; short labels just say Bumthang. "The first and only herbal tea farm in Bhutan." Thimphu appears only as where the founders reconvened in 2015 (and where Wangchuk Kuenga grew herbs at Yusipang, 2009 to 2015).
 - Herbs grown and harvested **above 9,000 ft (2,750 m)**.
-- Five certified organic teas: **Chamomile, Peppermint, Lemon Verbena, Sea Buckthorn, Hypericum**. Chamomile, Peppermint and Lemon Verbena carry Brand Bhutan certification.
+- Five certified organic teas (2023 article): **Chamomile, Peppermint, Lemon Verbena, Sea Buckthorn, Hypericum**. Chamomile, Peppermint and Lemon Verbena carry Brand Bhutan certification.
 - Herbs are hand-harvested at their peak, carefully dried and packaged without chemical additives. 100% organic.
+
+**Client's own catalogue page (2026-10-11), the source for products and contact details:**
+
+- Six single-herb teas, in this order: **Chamomile** (*Matricaria recutita*), **Mint** (*Mentha piperita*), **Lemon Verbena** (*Aloysia triphylla*), **Himalayan Sea-Berry** (*Hippophae salicifolia*), **Chrysanthemum** (*Chrysanthemum × morifolium*), **Hypericum** (*Hypericum perforatum*). Packs: 20 tea bags × 1 g (Sea-Berry × 2 g) at Nu. 300; Hypericum loose leaf 10 g at Nu. 200. Chrysanthemum is not yet confirmed as certified organic.
+- Hypericum shows the client's safety note (medicine interactions, pregnancy) verbatim on its page.
+- Specialty teas and gifts, enquiry only: Himalayan Ginseng Tea, Cordyceps Ginseng Tea, Inner Peace Tea, Assorted Tea Gift Box.
+- Contact: WhatsApp / phone +975 77863786, herbalboy27@gmail.com, Instagram @bhutan_herbal_tea, Facebook herbaltea.bhutan, Bumthang, Bhutan.
+- Also on the site: farm-to-cup steps and certifications (LOAS, BFDA Organic, BFDA GHP/GMP, BFDA product certification, Brand Bhutan / Grown in Bhutan; client to confirm scope) on How It's Grown; wholesale and export, and farm visits, on Contact. Enquiries are prefilled WhatsApp/email links, never a form.
 
 This is a **showcase and brand-story site only**: no shop, cart, checkout, accounts, database or API routes. Keep it simple.
 

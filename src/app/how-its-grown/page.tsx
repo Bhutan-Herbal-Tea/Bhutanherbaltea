@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { CLOSING_LINE } from "@/data/site";
-import { grownPage, people, practices } from "@/data/grown";
+import { certifications, farmSteps, grownPage, people } from "@/data/grown";
+import { ArrowLink } from "@/components/ui/ArrowLink";
 import { NumberedRows } from "@/components/ui/NumberedRows";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
@@ -23,8 +24,9 @@ export default function HowItsGrownPage() {
           <h2 id="practices-heading" className="font-serif text-title text-foreground">
             {grownPage.practicesSection.heading}
           </h2>
+          <p className="mt-5 text-lead text-muted-foreground">{grownPage.practicesSection.intro}</p>
         </Reveal>
-        <NumberedRows rows={practices} />
+        <NumberedRows rows={farmSteps} />
       </Section>
 
       <section aria-labelledby="people-heading" className="pb-20 md:pb-28 xl:pb-36">
@@ -51,6 +53,34 @@ export default function HowItsGrownPage() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section aria-labelledby="certifications-heading" className="bg-card py-20 md:py-24 xl:py-28">
+        <div className="container-page grid gap-10 xl:grid-cols-[6fr_5fr] xl:gap-20">
+          <Reveal>
+            <p className="eyebrow text-accent-text">{certifications.eyebrow}</p>
+            <h2 id="certifications-heading" className="mt-4 font-serif text-title text-foreground">
+              {certifications.heading}
+            </h2>
+            <p className="mt-5 max-w-2xl text-lead text-muted-foreground">{certifications.body}</p>
+            <ul className="mt-6 flex flex-wrap gap-3">
+              {certifications.items.map((item) => (
+                <li
+                  key={item}
+                  className="border border-forest/30 px-3 py-2 font-mono text-[0.72rem] tracking-[0.15em] text-foreground uppercase dark:border-saffron/40"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+          <Reveal className="self-end">
+            <p className="text-muted-foreground">{certifications.tradeNote}</p>
+            <ArrowLink href="/contact#wholesale" className="mt-6">
+              {certifications.tradeLinkLabel}
+            </ArrowLink>
+          </Reveal>
+        </div>
       </section>
 
       <section className="relative overflow-hidden py-28 text-center md:py-36 xl:py-48">

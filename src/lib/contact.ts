@@ -2,9 +2,11 @@ import type { Contact } from "@/data/site";
 
 export type SocialLink = { network: "facebook" | "instagram"; label: string; href: string };
 
-export function whatsappHref(number: string): string | null {
+// `message` prefills the chat, e.g. "Mint Tea enquiry".
+export function whatsappHref(number: string, message?: string): string | null {
   const digits = number.replace(/\D/g, "");
-  return digits.length >= 8 ? `https://wa.me/${digits}` : null;
+  if (digits.length < 8) return null;
+  return message ? `https://wa.me/${digits}?text=${encodeURIComponent(message)}` : `https://wa.me/${digits}`;
 }
 
 export function telHref(phone: string): string | null {
@@ -12,9 +14,14 @@ export function telHref(phone: string): string | null {
   return cleaned.replace(/\D/g, "").length >= 6 ? `tel:${cleaned}` : null;
 }
 
-export function mailtoHref(email: string): string | null {
+export function mailtoHref(email: string, prefill?: { subject?: string; body?: string }): string | null {
   const trimmed = email.trim();
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed) ? `mailto:${trimmed}` : null;
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmed)) return null;
+  const params = [
+    prefill?.subject && `subject=${encodeURIComponent(prefill.subject)}`,
+    prefill?.body && `body=${encodeURIComponent(prefill.body)}`,
+  ].filter(Boolean);
+  return params.length > 0 ? `mailto:${trimmed}?${params.join("&")}` : `mailto:${trimmed}`;
 }
 
 export function hasDirectContact(contact: Contact): boolean {

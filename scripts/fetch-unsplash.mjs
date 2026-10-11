@@ -1,6 +1,8 @@
 // Downloads free Unsplash photos used as stand-ins for the client's own photography,
 // resizes them with sharp (ships with Next.js) and writes public/images/CREDITS.md.
 // Replace any file with the client's photo of the same name; then update its line in CREDITS.md.
+// Pass file names to fetch only those (e.g. `npm run assets:photos -- teas/chrysanthemum.jpg`);
+// CREDITS.md is always written for the full list.
 import sharp from "sharp";
 import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
@@ -21,9 +23,10 @@ const PHOTOS = [
   ["story/stage-6.jpg", "qEcWgrTG578", "Drew Jemmett", "A cup of tea among dried herbs", 1600],
   ["story/summit.jpg", "9uylKZlgW_0", "Luc Santeramo", "Prayer flags at a snowy mountain pass", 1800],
   ["teas/chamomile.jpg", "m_osD-h26dI", "Chirag Saini", "Chamomile flowers in bloom", 1200],
-  ["teas/peppermint.jpg", "bHWRSq8fUUE", "SIMON LEE", "Fresh mint leaves", 1200],
+  ["teas/mint.jpg", "bHWRSq8fUUE", "SIMON LEE", "Fresh mint leaves", 1200],
   ["teas/lemon-verbena.jpg", "_zdARSmCZh4", "Alejandro Piñero Amerio", "Leafy green herb stems", 1200],
-  ["teas/sea-buckthorn.jpg", "UEsg8t4Oky4", "Juneta Jurgaityte", "Orange sea buckthorn berries", 1200],
+  ["teas/himalayan-sea-berry.jpg", "UEsg8t4Oky4", "Juneta Jurgaityte", "Orange sea buckthorn berries", 1200],
+  ["teas/chrysanthemum.jpg", "RHjqD23qfHs", "Yang Yu", "Yellow chrysanthemum flowers", 1200],
   ["teas/hypericum.jpg", "1-Qg951Wwfs", "Ronin", "Yellow hypericum flowers", 1200],
   ["people/farmer-1.jpg", "Mw1bnPE4MI0", "一只猫的橘", "A person working among tea bushes", 1200],
   ["people/farmer-2.jpg", "9zVMF1HJiic", "Charlotte Thomas", "Hands holding freshly picked herbs", 1200],
@@ -57,7 +60,11 @@ async function download(id, file) {
   throw new Error(`${file}: still rate limited after 6 attempts`);
 }
 
+const only = process.argv.slice(2);
+
 for (const [file, id, photographer, subject, width] of PHOTOS) {
+  lines.push(`| \`${file}\` | ${subject} | ${photographer} | https://unsplash.com/photos/${id} |`);
+  if (only.length > 0 && !only.includes(file)) continue;
   const input = await download(id, file);
   await wait(2_500);
   const path = join(OUT, file);
@@ -69,7 +76,6 @@ for (const [file, id, photographer, subject, width] of PHOTOS) {
     .resize({ width, withoutEnlargement: true })
     .jpeg({ quality, mozjpeg: true })
     .toFile(path);
-  lines.push(`| \`${file}\` | ${subject} | ${photographer} | https://unsplash.com/photos/${id} |`);
   console.log(`${file}  ${info.width}x${info.height}  ${Math.round(info.size / 1024)} KB`);
 }
 

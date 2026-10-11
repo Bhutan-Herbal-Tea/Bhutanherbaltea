@@ -7,6 +7,7 @@ const empty: Contact = {
   phone: "",
   whatsapp: "",
   email: "",
+  address: "",
   social: { facebook: "", instagram: "" },
   whereToBuy: [],
 };
