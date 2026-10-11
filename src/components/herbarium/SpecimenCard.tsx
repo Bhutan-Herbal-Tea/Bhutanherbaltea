@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Tea } from "@/data/teas";
 import { PLATE_PLACE } from "@/data/site";
-import { SpecimenPlate } from "@/components/ui/SpecimenPlate";
+import { SpecimenPlate } from "@/components/herbarium/SpecimenPlate";
 
 // headingLevel keeps the outline valid: h3 under a section h2, h2 directly under the page h1.
 type SpecimenCardProps = { tea: Tea; sizes: string; headingLevel?: 2 | 3 };

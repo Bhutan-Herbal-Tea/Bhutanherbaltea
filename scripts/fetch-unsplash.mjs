@@ -11,7 +11,7 @@ const OUT = join(process.cwd(), "public", "images");
 
 // [file, Unsplash photo id, photographer, subject, max width]
 const PHOTOS = [
-  ["hero/thimphu-fields.jpg", "K32tIswSJTc", "PENDEN Wangchuk", "Terraced fields and farmhouses on a Bhutanese hillside", 1600],
+  ["hero/terraced-fields.jpg", "K32tIswSJTc", "PENDEN Wangchuk", "Terraced fields and farmhouses on a Bhutanese hillside", 1600],
   ["fields/farm.jpg", "QkbIxJhALtk", "Pema Gyamtsho", "Golden fields below a Bhutanese building", 1800],
   ["fields/herb-rows.jpg", "LUW-ROb7P9I", "David Guliciuc", "Rows of young plants below mountains", 1800],
   ["fields/drying.jpg", "UN-VxzWSmYc", "malwina nogaj", "Bunches of herbs hung up to dry", 1600],

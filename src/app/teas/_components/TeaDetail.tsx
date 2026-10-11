@@ -1,11 +1,11 @@
 import { Leaf } from "lucide-react";
 import type { Tea } from "@/data/teas";
 import { PLATE_PLACE } from "@/data/site";
-import { teaDetailCopy } from "@/data/pages";
+import { teaDetailCopy } from "@/data/pages/teas";
 import { ArrowLink } from "@/components/ui/ArrowLink";
-import { SpecimenPlate } from "@/components/ui/SpecimenPlate";
+import { SpecimenPlate } from "@/components/herbarium/SpecimenPlate";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
-import { SpecimenCard } from "@/components/teas/SpecimenCard";
+import { SpecimenCard } from "@/components/herbarium/SpecimenCard";
 
 type TeaDetailProps = { tea: Tea; others: Tea[] };
 

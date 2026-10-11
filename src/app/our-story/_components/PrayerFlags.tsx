@@ -1,4 +1,4 @@
-import { LUNGTA_COLORS } from "@/data/story";
+import { LUNGTA_COLORS } from "@/data/pages/story";
 import { cn } from "@/lib/utils";
 
 // A string of lungta across the summit: three runs of the five colours (two on phones).

@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { CLOSING_LINE } from "@/data/site";
-import { certifications, farmSteps, grownPage, people } from "@/data/grown";
+import { certifications, farmSteps, grownPage, people } from "@/data/pages/grown";
 import { ArrowLink } from "@/components/ui/ArrowLink";
-import { NumberedRows } from "@/components/ui/NumberedRows";
-import { PageHero } from "@/components/ui/PageHero";
+import { NumberedRows } from "@/components/herbarium/NumberedRows";
+import { PageHero } from "@/components/herbarium/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
-import { SpecimenPlate } from "@/components/ui/SpecimenPlate";
+import { SpecimenPlate } from "@/components/herbarium/SpecimenPlate";
 
 export const metadata: Metadata = {
   title: grownPage.meta.title,

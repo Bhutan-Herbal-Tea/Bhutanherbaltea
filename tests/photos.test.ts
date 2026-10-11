@@ -24,7 +24,7 @@ test("every stand-in photo is credited in CREDITS.md", () => {
 });
 
 test("the hero photo stays under 300 KB and no photo exceeds 450 KB", () => {
-  assert.ok(statSync(join(IMAGES, "hero", "thimphu-fields.jpg")).size <= 300 * 1024, "hero over 300 KB");
+  assert.ok(statSync(join(IMAGES, "hero", "terraced-fields.jpg")).size <= 300 * 1024, "hero over 300 KB");
   for (const file of photos()) {
     assert.ok(statSync(join(IMAGES, file)).size <= 450 * 1024, `${file} over 450 KB`);
   }

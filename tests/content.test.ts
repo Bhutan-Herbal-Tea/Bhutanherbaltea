@@ -2,11 +2,15 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
-import { contact, DRUK_JA, facts, heroPhoto, nav, SUMMIT_ALTITUDE_M, TAGLINE, type Photo } from "../src/data/site.ts";
+import { contact, DRUK_JA, facts, heroPhoto, nav, SUMMIT_ALTITUDE_M, TAGLINE } from "../src/data/site.ts";
+import type { Photo } from "../src/data/types.ts";
 import { featuredTeas, getTea, otherTeas, teas } from "../src/data/teas.ts";
-import { LUNGTA_COLORS, stages, storyPage } from "../src/data/story.ts";
-import { certifications, farmSteps, grownPage, people } from "../src/data/grown.ts";
-import { contactPage, homeCopy, notFoundCopy, teaDetailCopy, teasPage } from "../src/data/pages.ts";
+import { LUNGTA_COLORS, stages, storyPage } from "../src/data/pages/story.ts";
+import { certifications, farmSteps, grownPage, people } from "../src/data/pages/grown.ts";
+import { contactPage } from "../src/data/pages/contact.ts";
+import { homeCopy } from "../src/data/pages/home.ts";
+import { notFoundCopy } from "../src/data/pages/not-found.ts";
+import { teaDetailCopy, teasPage } from "../src/data/pages/teas.ts";
 
 const allContent = { contact, facts, heroPhoto, nav, teas, stages, storyPage, grownPage, people, farmSteps, certifications, contactPage, homeCopy, notFoundCopy, teaDetailCopy, teasPage };
 

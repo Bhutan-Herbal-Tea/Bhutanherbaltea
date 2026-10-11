@@ -5,7 +5,7 @@ Replace each file with the client's own photo of the same name, then update or r
 
 | File | Subject | Photographer | Source |
 | --- | --- | --- | --- |
-| `hero/thimphu-fields.jpg` | Terraced fields and farmhouses on a Bhutanese hillside | PENDEN Wangchuk | https://unsplash.com/photos/K32tIswSJTc |
+| `hero/terraced-fields.jpg` | Terraced fields and farmhouses on a Bhutanese hillside | PENDEN Wangchuk | https://unsplash.com/photos/K32tIswSJTc |
 | `fields/farm.jpg` | Golden fields below a Bhutanese building | Pema Gyamtsho | https://unsplash.com/photos/QkbIxJhALtk |
 | `fields/herb-rows.jpg` | Rows of young plants below mountains | David Guliciuc | https://unsplash.com/photos/LUW-ROb7P9I |
 | `fields/drying.jpg` | Bunches of herbs hung up to dry | malwina nogaj | https://unsplash.com/photos/UN-VxzWSmYc |

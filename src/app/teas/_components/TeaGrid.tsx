@@ -1,7 +1,7 @@
 import type { Tea } from "@/data/teas";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/Reveal";
-import { SpecimenCard } from "@/components/teas/SpecimenCard";
+import { SpecimenCard } from "@/components/herbarium/SpecimenCard";
 
 // Staggered catalogue: on tablet every second plate drops; on desktop the middle column drops.
 // The drop uses Tailwind's `translate` property, so it doesn't clash with Reveal's transform.

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { SUMMIT_ALTITUDE_M } from "@/data/site";
-import { storyPage } from "@/data/story";
+import { storyPage } from "@/data/pages/story";
 import { formatAltitude } from "@/lib/altitude";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { ButtonLink } from "@/components/ui/ButtonLink";

@@ -1,7 +1,7 @@
-import { homeCopy } from "@/data/pages";
-import { AccentTitle } from "@/components/ui/AccentTitle";
+import { homeCopy } from "@/data/pages/home";
+import { AccentTitle } from "./AccentTitle";
 import { ArrowLink } from "@/components/ui/ArrowLink";
-import { NumberedRows } from "@/components/ui/NumberedRows";
+import { NumberedRows } from "@/components/herbarium/NumberedRows";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 

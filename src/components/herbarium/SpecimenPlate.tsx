@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import type { Photo } from "@/data/site";
+import type { Photo } from "@/data/types";
 import { cn } from "@/lib/utils";
 
 type SpecimenPlateProps = {

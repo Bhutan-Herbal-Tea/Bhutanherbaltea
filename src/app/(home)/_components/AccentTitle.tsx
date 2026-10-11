@@ -1,4 +1,4 @@
-import type { AccentHeading } from "@/data/pages";
+import type { AccentHeading } from "@/data/types";
 import { cn } from "@/lib/utils";
 
 type AccentTitleProps = {

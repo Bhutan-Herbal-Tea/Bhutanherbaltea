@@ -2,8 +2,9 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { contact } from "../src/data/site.ts";
 import { getTea, specialtyTeas, teas } from "../src/data/teas.ts";
-import { certifications, farmSteps } from "../src/data/grown.ts";
-import { contactPage, teaDetailCopy, teasPage } from "../src/data/pages.ts";
+import { certifications, farmSteps } from "../src/data/pages/grown.ts";
+import { contactPage } from "../src/data/pages/contact.ts";
+import { teaDetailCopy, teasPage } from "../src/data/pages/teas.ts";
 import { mailtoHref, whatsappHref } from "../src/lib/contact.ts";
 
 // Source: the client's own catalogue page (sent 2026-10-11).

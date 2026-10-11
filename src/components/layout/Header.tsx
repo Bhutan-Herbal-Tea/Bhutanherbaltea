@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { mainNav } from "@/data/site";
 import { isActive } from "@/lib/nav";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
-import { Wordmark } from "@/components/ui/Wordmark";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
+import { Wordmark } from "@/components/layout/Wordmark";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 
 // Always solid: a transparent header cannot stay readable over photos in both themes.
