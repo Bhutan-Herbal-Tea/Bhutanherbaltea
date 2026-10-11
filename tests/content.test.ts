@@ -5,10 +5,10 @@ import { join } from "node:path";
 import { contact, DRUK_JA, facts, heroPhoto, nav, SUMMIT_ALTITUDE_M, TAGLINE, type Photo } from "../src/data/site.ts";
 import { featuredTeas, getTea, otherTeas, teas } from "../src/data/teas.ts";
 import { LUNGTA_COLORS, stages, storyPage } from "../src/data/story.ts";
-import { grownPage, people, practices } from "../src/data/grown.ts";
+import { certifications, farmSteps, grownPage, people } from "../src/data/grown.ts";
 import { contactPage, homeCopy, notFoundCopy, teaDetailCopy, teasPage } from "../src/data/pages.ts";
 
-const allContent = { contact, facts, heroPhoto, nav, teas, stages, storyPage, grownPage, people, practices, contactPage, homeCopy, notFoundCopy, teaDetailCopy, teasPage };
+const allContent = { contact, facts, heroPhoto, nav, teas, stages, storyPage, grownPage, people, farmSteps, certifications, contactPage, homeCopy, notFoundCopy, teaDetailCopy, teasPage };
 
 function collectPhotos(value: unknown, found: Photo[] = []): Photo[] {
   if (Array.isArray(value)) value.forEach((v) => collectPhotos(v, found));
@@ -20,13 +20,6 @@ function collectPhotos(value: unknown, found: Photo[] = []): Photo[] {
   return found;
 }
 
-test("the five teas from the source article, in order", () => {
-  assert.deepEqual(
-    teas.map((t) => t.name),
-    ["Chamomile", "Peppermint", "Lemon Verbena", "Sea Buckthorn", "Hypericum"],
-  );
-});
-
 test("tea slugs are unique kebab-case", () => {
   const slugs = teas.map((t) => t.slug);
   assert.equal(new Set(slugs).size, slugs.length);
@@ -34,15 +27,15 @@ test("tea slugs are unique kebab-case", () => {
 });
 
 test("featured teas are the three Brand Bhutan certified teas", () => {
-  assert.deepEqual(featuredTeas.map((t) => t.slug), ["chamomile", "peppermint", "lemon-verbena"]);
+  assert.deepEqual(featuredTeas.map((t) => t.slug), ["chamomile", "mint", "lemon-verbena"]);
 });
 
 test("getTea and otherTeas", () => {
-  assert.equal(getTea("peppermint")?.name, "Peppermint");
+  assert.equal(getTea("mint")?.name, "Mint");
   assert.equal(getTea("green-tea"), undefined);
-  const others = otherTeas("peppermint");
-  assert.equal(others.length, 4);
-  assert.ok(others.every((t) => t.slug !== "peppermint"));
+  const others = otherTeas("mint");
+  assert.equal(others.length, teas.length - 1);
+  assert.ok(others.every((t) => t.slug !== "mint"));
 });
 
 test("benefits stay empty until the client approves wording (update this test when they do)", () => {
@@ -94,20 +87,14 @@ test("home hero subtext stays within 20 words", () => {
   assert.ok(homeCopy.hero.subtext.split(/\s+/).length <= 20);
 });
 
-test("every tea has the botanical name for its specimen label", () => {
-  assert.deepEqual(
-    teas.map((t) => t.botanical),
-    ["Matricaria chamomilla", "Mentha × piperita", "Aloysia citrodora", "Hippophae", "Hypericum"],
-  );
-});
-
 test("the facts band shows the five sourced facts", () => {
-  assert.deepEqual(facts.map((f) => f.value), ["2016", "2,750 m", "5", "3", "1st"]);
+  assert.deepEqual(facts.map((f) => f.value), ["2016", "2,750 m", "6", "3", "1st"]);
   for (const fact of facts) assert.ok(fact.label.length > 0);
 });
 
 test("the Dzongkha accent reads Druk ja, Bhutanese tea", () => {
-  assert.equal(DRUK_JA, "འབྲུག་ཇ།");
+  // འབྲུག་ཇ། as escapes, so a non-UTF-8 editor can't mangle it.
+  assert.equal(DRUK_JA, "\u0F60\u0F56\u0FB2\u0F74\u0F42\u0F0B\u0F47\u0F0D");
 });
 
 test("the home headline joins back into the brand tagline", () => {

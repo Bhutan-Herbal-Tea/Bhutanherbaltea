@@ -2,8 +2,9 @@ import { Leaf } from "lucide-react";
 import type { Tea } from "@/data/teas";
 import { PLATE_PLACE } from "@/data/site";
 import { teaDetailCopy } from "@/data/pages";
-import { ButtonLink } from "@/components/ui/ButtonLink";
+import { ArrowLink } from "@/components/ui/ArrowLink";
 import { SpecimenPlate } from "@/components/ui/SpecimenPlate";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { SpecimenCard } from "@/components/teas/SpecimenCard";
 
 type TeaDetailProps = { tea: Tea; others: Tea[] };
@@ -16,7 +17,7 @@ export function TeaDetail({ tea, others }: TeaDetailProps) {
         <SpecimenPlate
           image={{ src: tea.image, alt: tea.imageAlt }}
           preload
-          label={[tea.botanical, copy.organicLabel, PLATE_PLACE]}
+          label={[tea.botanical, ...(tea.certifiedOrganic ? [copy.organicLabel] : []), PLATE_PLACE]}
           sizes="(min-width: 1280px) 42vw, (min-width: 768px) 70vw, 100vw"
           className="mx-auto w-full md:w-[70%] xl:sticky xl:top-28 xl:w-full xl:self-start"
         />
@@ -27,6 +28,14 @@ export function TeaDetail({ tea, others }: TeaDetailProps) {
             <p className="mt-2 pb-1 font-serif text-2xl text-muted-foreground italic">{tea.botanical}</p>
             <p className="mt-6 text-lead text-muted-foreground">{tea.description}</p>
           </header>
+          {tea.caution && (
+            <aside aria-labelledby="caution-heading" className="border-l-2 border-bhutan bg-card p-5 md:p-6">
+              <h2 id="caution-heading" className="eyebrow text-foreground">
+                {copy.cautionHeading}
+              </h2>
+              <p className="mt-3 text-foreground">{tea.caution}</p>
+            </aside>
+          )}
           {tea.benefits.length > 0 && (
             <section aria-labelledby="benefits-heading">
               <h2 id="benefits-heading" className="font-serif text-3xl text-foreground">
@@ -58,14 +67,25 @@ export function TeaDetail({ tea, others }: TeaDetailProps) {
               <p className="mt-4 text-muted-foreground">{tea.brewing}</p>
             </section>
           )}
-          <section aria-labelledby="buy-heading" className="border-l-2 border-forest pl-6 dark:border-saffron">
-            <h2 id="buy-heading" className="font-serif text-3xl text-foreground">
-              {copy.whereToBuy.heading}
+          <section aria-labelledby="order-heading" className="border-l-2 border-forest pl-6 dark:border-saffron">
+            <h2 id="order-heading" className="font-serif text-3xl text-foreground">
+              {copy.order.heading}
             </h2>
-            <p className="mt-3 text-muted-foreground">{copy.whereToBuy.body}</p>
-            <ButtonLink href="/contact#where-to-buy" className="mt-6 w-full md:w-auto">
-              {copy.whereToBuy.linkLabel}
-            </ButtonLink>
+            <dl className="mt-5 grid grid-cols-[auto_1fr] gap-x-8 gap-y-2">
+              <dt className="eyebrow self-center text-muted-foreground">{copy.order.packLabel}</dt>
+              <dd className="text-foreground">{tea.pack}</dd>
+              <dt className="eyebrow self-center text-muted-foreground">{copy.order.priceLabel}</dt>
+              <dd className="font-serif text-2xl text-foreground">{tea.price}</dd>
+            </dl>
+            <p className="mt-4 text-sm text-muted-foreground">{copy.order.note}</p>
+            <div className="mt-6 flex flex-col items-start gap-5 md:flex-row md:items-center md:gap-8">
+              <WhatsAppButton
+                label={copy.order.whatsappLabel}
+                message={copy.order.message(tea.name)}
+                className="w-full md:w-auto"
+              />
+              <ArrowLink href="/contact#where-to-buy">{copy.order.contactLabel}</ArrowLink>
+            </div>
           </section>
         </div>
       </div>

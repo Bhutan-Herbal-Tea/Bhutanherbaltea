@@ -8,11 +8,16 @@ import { Section } from "@/components/ui/Section";
 import { SocialLinks } from "@/components/ui/SocialLinks";
 import { SpecimenPlate } from "@/components/ui/SpecimenPlate";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { EnquiryLinks } from "./_components/EnquiryLinks";
+import { VisitSection } from "./_components/VisitSection";
+import { WholesaleSection } from "./_components/WholesaleSection";
 
 export const metadata: Metadata = {
   title: contactPage.meta.title,
   description: contactPage.meta.description,
 };
+
+const detailLink = "flex items-center gap-3 text-lg text-foreground transition-colors hover:text-accent-text";
 
 export default function ContactPage() {
   const tel = telHref(contact.phone);
@@ -36,21 +41,30 @@ export default function ContactPage() {
               {contactPage.getInTouchHeading}
             </h2>
             {hasDirectContact(contact) ? (
-              <div className="mt-8 flex flex-col items-start gap-5">
-                <WhatsAppButton label={contactPage.whatsappLabel} className="w-full md:w-auto" />
-                {tel && (
-                  <a href={tel} className="flex items-center gap-3 text-lg text-foreground hover:text-accent-text">
-                    <Phone className="size-5" aria-hidden />
-                    {contact.phone}
-                  </a>
-                )}
-                {mail && (
-                  <a href={mail} className="flex items-center gap-3 text-lg text-foreground hover:text-accent-text">
-                    <Mail className="size-5" aria-hidden />
-                    {contact.email}
-                  </a>
-                )}
-              </div>
+              <>
+                <p className="mt-5 text-muted-foreground">{contactPage.getInTouchBody}</p>
+                <div className="mt-8 flex flex-col items-start gap-5">
+                  <WhatsAppButton label={contactPage.whatsappLabel} className="w-full md:w-auto" />
+                  {tel && (
+                    <a href={tel} className={detailLink}>
+                      <Phone className="size-5" aria-hidden />
+                      {contact.phone}
+                    </a>
+                  )}
+                  {mail && (
+                    <a href={mail} className={detailLink}>
+                      <Mail className="size-5" aria-hidden />
+                      {contact.email}
+                    </a>
+                  )}
+                  {contact.address && (
+                    <p className="flex items-center gap-3 text-lg text-foreground">
+                      <MapPin className="size-5" aria-hidden />
+                      {contact.address}
+                    </p>
+                  )}
+                </div>
+              </>
             ) : (
               <p className="mt-8 text-lead text-muted-foreground">{contactPage.comingSoon}</p>
             )}
@@ -62,25 +76,30 @@ export default function ContactPage() {
             )}
           </section>
 
-          <section id="where-to-buy" aria-labelledby="where-to-buy-heading" className="scroll-mt-24">
-            <h2 id="where-to-buy-heading" className="font-serif text-title text-foreground">
-              {contactPage.whereToBuyHeading}
-            </h2>
-            {contact.whereToBuy.length > 0 ? (
-              <ul className="mt-8 space-y-4">
-                {contact.whereToBuy.map((place) => (
-                  <li key={place} className="flex gap-3 text-lg text-foreground">
-                    <MapPin className="mt-1 size-5 shrink-0" aria-hidden />
-                    {place}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="mt-8 text-lead text-muted-foreground">{contactPage.whereToBuyComingSoon}</p>
-            )}
-          </section>
+          <div className="flex flex-col gap-14 md:col-span-2 xl:col-span-1">
+            <EnquiryLinks />
+            <section id="where-to-buy" aria-labelledby="where-to-buy-heading" className="scroll-mt-24">
+              <h2 id="where-to-buy-heading" className="font-serif text-title text-foreground">
+                {contactPage.whereToBuyHeading}
+              </h2>
+              {contact.whereToBuy.length > 0 ? (
+                <ul className="mt-8 space-y-4">
+                  {contact.whereToBuy.map((place) => (
+                    <li key={place} className="flex gap-3 text-lg text-foreground">
+                      <MapPin className="mt-1 size-5 shrink-0" aria-hidden />
+                      {place}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="mt-6 text-muted-foreground">{contactPage.whereToBuyComingSoon}</p>
+              )}
+            </section>
+          </div>
         </div>
       </Section>
+      <WholesaleSection />
+      <VisitSection />
     </>
   );
 }

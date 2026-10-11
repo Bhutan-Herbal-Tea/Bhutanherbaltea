@@ -30,7 +30,7 @@ export type Fact = { value: string; label: string };
 export const facts: Fact[] = [
   { value: "2016", label: "Year founded" },
   { value: "2,750 m", label: "Grown and harvested above" },
-  { value: "5", label: "Certified organic teas" },
+  { value: "6", label: "Single-herb teas" }, // client's catalogue (2026-10-11)
   { value: "3", label: "Brand Bhutan certified" },
   { value: "1st", label: "Herbal tea farm in Bhutan" },
 ];
@@ -61,17 +61,20 @@ export type Contact = {
   phone: string;
   whatsapp: string;
   email: string;
+  address: string;
   social: SocialLinks;
   whereToBuy: string[];
 };
 
+// From the client's own page (2026-10-11).
 export const contact: Contact = {
-  phone: "", // TODO
-  whatsapp: "", // TODO: international format, digits only, e.g. "975XXXXXXXX"
-  email: "", // TODO
+  phone: "+975 77863786",
+  whatsapp: "97577863786", // international format, digits only
+  email: "herbalboy27@gmail.com",
+  address: "Bumthang, Bhutan",
   social: {
     facebook: "https://www.facebook.com/herbaltea.bhutan/",
-    instagram: "", // TODO
+    instagram: "https://www.instagram.com/bhutan_herbal_tea/",
   },
-  whereToBuy: [], // TODO: stockists or shops
+  whereToBuy: [], // TODO: stockists or shops; until then the page points to ordering directly
 };

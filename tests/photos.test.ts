@@ -19,7 +19,7 @@ test("every stand-in photo is credited in CREDITS.md", () => {
   assert.ok(existsSync(credits), "public/images/CREDITS.md is missing");
   const text = readFileSync(credits, "utf8");
   const files = photos();
-  assert.equal(files.length, 20);
+  assert.equal(files.length, 21);
   for (const file of files) assert.ok(text.includes(`\`${file}\``), `${file} is not credited`);
 });
 
