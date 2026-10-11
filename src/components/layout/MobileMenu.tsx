@@ -18,7 +18,7 @@ export function MobileMenu({ pathname }: { pathname: string }) {
       <SheetTrigger
         aria-label="Open menu"
         aria-expanded={open}
-        className="inline-flex size-11 items-center justify-center text-foreground transition-colors hover:bg-foreground/10 xl:hidden"
+        className="inline-flex size-11 items-center justify-center text-foreground transition-colors hover:bg-foreground/10 lg:hidden"
       >
         <Menu className="size-6" aria-hidden />
       </SheetTrigger>

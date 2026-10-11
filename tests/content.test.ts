@@ -33,9 +33,10 @@ test("featured teas are the three Brand Bhutan certified teas", () => {
 test("getTea and otherTeas", () => {
   assert.equal(getTea("mint")?.name, "Mint");
   assert.equal(getTea("green-tea"), undefined);
-  const others = otherTeas("mint");
-  assert.equal(others.length, teas.length - 1);
-  assert.ok(others.every((t) => t.slug !== "mint"));
+  // The next three teas in catalogue order, wrapping round, so every tea is suggested somewhere
+  // and the row never leaves a lone card.
+  assert.deepEqual(otherTeas("mint").map((t) => t.slug), ["lemon-verbena", "himalayan-sea-berry", "chrysanthemum"]);
+  assert.deepEqual(otherTeas("hypericum").map((t) => t.slug), ["chamomile", "mint", "lemon-verbena"]);
 });
 
 test("benefits stay empty until the client approves wording (update this test when they do)", () => {

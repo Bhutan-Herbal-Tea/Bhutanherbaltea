@@ -127,6 +127,8 @@ export function getTea(slug: string): Tea | undefined {
   return teas.find((tea) => tea.slug === slug);
 }
 
-export function otherTeas(slug: string): Tea[] {
-  return teas.filter((tea) => tea.slug !== slug);
+// The next `count` teas after this one in catalogue order, wrapping round.
+export function otherTeas(slug: string, count = 3): Tea[] {
+  const start = teas.findIndex((tea) => tea.slug === slug);
+  return Array.from({ length: Math.min(count, teas.length - 1) }, (_, i) => teas[(start + 1 + i) % teas.length]);
 }
