@@ -1,9 +1,9 @@
 import { CLOSING_LINE } from "@/data/site";
 import { teas } from "@/data/teas";
-import { homeCopy } from "@/data/pages";
-import { FactsBand } from "@/components/ui/FactsBand";
-import { QuoteBlock } from "@/components/ui/QuoteBlock";
-import { Ticker } from "@/components/ui/Ticker";
+import { homeCopy } from "@/data/pages/home";
+import { FactsBand } from "./_components/FactsBand";
+import { QuoteBlock } from "./_components/QuoteBlock";
+import { Ticker } from "./_components/Ticker";
 import { ClosingPanel } from "./_components/ClosingPanel";
 import { FeaturedTeas } from "./_components/FeaturedTeas";
 import { Hero } from "./_components/Hero";

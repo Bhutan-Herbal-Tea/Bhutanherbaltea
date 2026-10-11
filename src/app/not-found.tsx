@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { notFoundCopy } from "@/data/pages";
+import { notFoundCopy } from "@/data/pages/not-found";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { SUMMIT_ALTITUDE_M } from "@/data/site";
-import { stages, storyPage } from "@/data/story";
+import { stages, storyPage } from "@/data/pages/story";
 import { stageLayout } from "@/lib/story";
-import { PageHero } from "@/components/ui/PageHero";
+import { PageHero } from "@/components/herbarium/PageHero";
 import { ClimbStage } from "./_components/ClimbStage";
 import { ClimbTrack } from "./_components/ClimbTrack";
 import { Summit } from "./_components/Summit";

@@ -1,9 +1,9 @@
 import Image from "next/image";
-import type { ClimbStageData } from "@/data/story";
+import type { ClimbStageData } from "@/data/pages/story";
 import type { StageLayout } from "@/lib/story";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/ui/Reveal";
-import { SpecimenPlate } from "@/components/ui/SpecimenPlate";
+import { SpecimenPlate } from "@/components/herbarium/SpecimenPlate";
 
 type ClimbStageProps = { stage: ClimbStageData; layout: StageLayout };
 

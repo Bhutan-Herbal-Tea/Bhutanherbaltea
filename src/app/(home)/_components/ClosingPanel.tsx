@@ -1,4 +1,5 @@
-import { contactPage, homeCopy } from "@/data/pages";
+import { contactPage } from "@/data/pages/contact";
+import { homeCopy } from "@/data/pages/home";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Reveal } from "@/components/ui/Reveal";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";

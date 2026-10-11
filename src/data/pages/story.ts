@@ -1,4 +1,6 @@
-import { FARM_VILLAGE, type Photo } from "./site.ts";
+// Our Story page copy: the climb stages and the summit.
+import { FARM_VILLAGE } from "../site.ts";
+import type { Photo } from "../types";
 
 export type ClimbStageData = {
   id: string;

@@ -1,10 +1,10 @@
 import { featuredTeas } from "@/data/teas";
-import { homeCopy } from "@/data/pages";
-import { AccentTitle } from "@/components/ui/AccentTitle";
+import { homeCopy } from "@/data/pages/home";
+import { AccentTitle } from "./AccentTitle";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
-import { SpecimenCard } from "@/components/teas/SpecimenCard";
+import { SpecimenCard } from "@/components/herbarium/SpecimenCard";
 
 export function FeaturedTeas() {
   const { eyebrow, title, body, linkLabel } = homeCopy.featured;

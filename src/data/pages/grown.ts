@@ -1,4 +1,6 @@
-import { FARM_VILLAGE, type Photo } from "./site.ts";
+// How It's Grown page copy: farm-to-cup steps, certifications and the people.
+import { FARM_VILLAGE } from "../site.ts";
+import type { Photo } from "../types";
 
 export type Practice = { title: string; body: string };
 export type Person = { image: Photo; caption: string };

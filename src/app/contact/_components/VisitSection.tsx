@@ -1,6 +1,6 @@
-import { contactPage } from "@/data/pages";
+import { contactPage } from "@/data/pages/contact";
 import { Reveal } from "@/components/ui/Reveal";
-import { SpecimenPlate } from "@/components/ui/SpecimenPlate";
+import { SpecimenPlate } from "@/components/herbarium/SpecimenPlate";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 export function VisitSection() {

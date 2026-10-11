@@ -148,56 +148,53 @@ export type Tea = {
 };
 ```
 
-```ts
-// src/data/site.ts
-export const SUMMIT_ALTITUDE_M = 2750; // Daily Bhutan 2023 ("above 9,000 ft"). TODO: client to confirm
-export const nav = [
-  { href: "/our-story", label: "Our Story" },
-  { href: "/teas", label: "Our Teas" },
-  { href: "/how-its-grown", label: "How It's Grown" },
-  { href: "/contact", label: "Contact" },
-];
-export const contact = {
-  phone: "",       // TODO
-  whatsapp: "",    // TODO: international format, digits only
-  email: "",       // TODO
-  social: { facebook: "", instagram: "" }, // TODO
-  whereToBuy: [] as string[],              // TODO
-};
-```
+`src/data/site.ts` holds brand-wide settings: `SUMMIT_ALTITUDE_M`, `FARM_PLACE`, `FARM_VILLAGE`, the facts band, navigation (`nav`, `mainNav`) and the client's contact details.
 
 Missing client content is expected. Use clearly marked placeholders (`TODO`) and placeholder images rather than inventing facts, benefits or contact details.
 
-## Suggested structure
+## Project structure
 
 ```
 src/
-  app/
-    layout.tsx               # fonts, header, footer, default metadata
-    page.tsx                 # Home
-    our-story/page.tsx
-    teas/page.tsx
-    teas/[slug]/page.tsx
+  app/                         # one folder per route (Next.js App Router)
+    layout.tsx                 # fonts, theme script, header, footer, default metadata
+    template.tsx               # gentle page fade
+    globals.css                # Tailwind v4 theme tokens, light/dark palettes, Herbarium utilities
+    (home)/                    # "/" (route group keeps the home components beside the page)
+      page.tsx
+      _components/             # Hero, Ticker, FactsBand, WhyAltitude, FeaturedTeas, QuoteBlock, ClosingPanel, AccentTitle
+    our-story/                 # page.tsx + _components/ (AltitudeMarker, ClimbTrack, ClimbStage, Summit, PrayerFlags)
+    teas/                      # page.tsx, [slug]/page.tsx + _components/ (TeaGrid, TeaDetail)
     how-its-grown/page.tsx
-    contact/page.tsx
-    not-found.tsx
-    sitemap.ts
-    robots.ts
-    opengraph-image.(png|tsx)
-    globals.css
-  components/
-    layout/                  # Header, MobileMenu, Footer, PageTransition
-    home/                    # Hero, StoryTeaser, FeaturedTeas, GrownStrip, ContactCta
-    story/                   # AltitudeMarker, ClimbStage
-    teas/                    # TeaCard, TeaGrid, TeaDetail
-    ui/                      # PageHero, Section, Reveal, Button, WhatsAppButton
-  data/
-    teas.ts
-    site.ts
+    contact/                   # page.tsx + _components/ (EnquiryLinks, WholesaleSection, VisitSection)
+    not-found.tsx, sitemap.ts, robots.ts, opengraph-image.tsx, icon.png
+    fonts/                     # local Dzongkha font subset (npm run assets:dzongkha)
+  components/                  # only what two or more routes share
+    layout/                    # Header, Wordmark, ThemeToggle, MobileMenu, Footer, SkipLink, MotionProvider
+    herbarium/                 # the design's own pieces: SpecimenPlate, SpecimenCard, PageHero, NumberedRows
+    ui/                        # generic building blocks: button + sheet (shadcn), ButtonLink, ArrowLink,
+                               # Section, Reveal, Logo, SocialLinks, SocialIcons, WhatsAppButton
+  data/                        # all editable content, typed
+    site.ts                    # brand, place, facts, navigation, contact details
+    teas.ts                    # the tea catalogue and specialty teas
+    types.ts                   # Photo, PageHeroContent, AccentHeading
+    pages/                     # copy for each page: home, story, teas, grown, contact, not-found
+  lib/                         # pure helpers with unit tests (altitude, contact links, nav, story layout, theme, cn)
+tests/                         # node:test unit tests (npm test)
+scripts/                       # asset scripts: Unsplash stand-ins, logo clean-up, Dzongkha font subset
 public/
-  images/                    # hero/, teas/, people/, fields/
-  logo.png                   # cleaned from images/Herbal tea.jpg
+  images/                      # hero/, fields/, story/, teas/, people/ + CREDITS.md; Herbal tea.jpg is the client's source logo
+  logo.png                     # transparent logo cleaned from images/Herbal tea.jpg
+docs/superpowers/              # current design spec and plan; earlier rounds in archive/
 ```
+
+Where new code goes:
+
+- A component used by **one page** lives in that route's `_components/` folder.
+- A component used by **two or more pages** goes in `src/components/`: `layout/` for the page frame, `herbarium/` for the design's own pieces, `ui/` for generic building blocks.
+- **Words, photos and facts** go in `src/data/`, never in components. Page copy goes in `src/data/pages/<page>.ts`.
+- **Pure logic** goes in `src/lib/` with a test in `tests/`.
+- File names are PascalCase for components, except shadcn's `button.tsx` and `sheet.tsx`, which keep the names the shadcn CLI expects.
 
 ## Requirements
 

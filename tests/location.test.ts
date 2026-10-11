@@ -2,9 +2,10 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { facts, FARM_PLACE, FARM_VILLAGE, PLATE_PLACE, SITE_DESCRIPTION } from "../src/data/site.ts";
 import { teas } from "../src/data/teas.ts";
-import { stages, storyPage } from "../src/data/story.ts";
-import { farmSteps, grownPage } from "../src/data/grown.ts";
-import { homeCopy, teasPage } from "../src/data/pages.ts";
+import { stages, storyPage } from "../src/data/pages/story.ts";
+import { farmSteps, grownPage } from "../src/data/pages/grown.ts";
+import { homeCopy } from "../src/data/pages/home.ts";
+import { teasPage } from "../src/data/pages/teas.ts";
 
 // The herbs grow in Bumthang (user, 2026-10-10). Thimphu is only where the founders met again in 2015.
 test("the farm is placed in Bumthang", () => {

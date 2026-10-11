@@ -1,6 +1,6 @@
 import { Mail } from "lucide-react";
 import { contact } from "@/data/site";
-import { contactPage } from "@/data/pages";
+import { contactPage } from "@/data/pages/contact";
 import { mailtoHref } from "@/lib/contact";
 import { buttonVariants } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/Reveal";

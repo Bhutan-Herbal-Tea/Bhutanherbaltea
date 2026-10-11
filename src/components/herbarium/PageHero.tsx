@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { Photo } from "@/data/site";
+import type { Photo } from "@/data/types";
 
 type PageHeroProps = { title: string; intro?: string; image: Photo };
 

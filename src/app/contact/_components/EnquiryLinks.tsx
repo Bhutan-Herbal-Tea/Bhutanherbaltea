@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { contact } from "@/data/site";
-import { contactPage } from "@/data/pages";
+import { contactPage } from "@/data/pages/contact";
 import { whatsappHref } from "@/lib/contact";
 
 // Prefilled WhatsApp messages, one per topic. Nothing is collected by the site.

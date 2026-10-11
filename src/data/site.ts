@@ -1,3 +1,6 @@
+// Brand-wide facts and settings used on every page: name, place, facts, navigation, contact.
+import type { Photo } from "./types";
+
 export const SITE_NAME = "Bhutan Herbal Tea";
 export const TAGLINE = "Wellness in Every Sip.";
 export const SITE_DESCRIPTION =
@@ -35,11 +38,9 @@ export const facts: Fact[] = [
   { value: "1st", label: "Herbal tea farm in Bhutan" },
 ];
 
-export type Photo = { src: string; alt: string };
-
 // TODO: replace with the client's photo; update the alt text to describe the real image.
 export const heroPhoto: Photo = {
-  src: "/images/hero/thimphu-fields.jpg",
+  src: "/images/hero/terraced-fields.jpg",
   alt: "Terraced fields and farmhouses on a hillside in Bhutan",
 };
 

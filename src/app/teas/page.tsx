@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { specialtyTeas, teas } from "@/data/teas";
-import { teasPage } from "@/data/pages";
-import { PageHero } from "@/components/ui/PageHero";
+import { teasPage } from "@/data/pages/teas";
+import { PageHero } from "@/components/herbarium/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";

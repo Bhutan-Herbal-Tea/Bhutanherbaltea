@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { contact } from "@/data/site";
-import { contactPage } from "@/data/pages";
+import { contactPage } from "@/data/pages/contact";
 import { hasDirectContact, mailtoHref, socialLinks, telHref } from "@/lib/contact";
-import { PageHero } from "@/components/ui/PageHero";
+import { PageHero } from "@/components/herbarium/PageHero";
 import { Section } from "@/components/ui/Section";
 import { SocialLinks } from "@/components/ui/SocialLinks";
-import { SpecimenPlate } from "@/components/ui/SpecimenPlate";
+import { SpecimenPlate } from "@/components/herbarium/SpecimenPlate";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { EnquiryLinks } from "./_components/EnquiryLinks";
 import { VisitSection } from "./_components/VisitSection";

@@ -1,10 +1,10 @@
 import { DRUK_JA, DRUK_JA_LATIN, heroPhoto } from "@/data/site";
-import { homeCopy } from "@/data/pages";
-import { AccentTitle } from "@/components/ui/AccentTitle";
+import { homeCopy } from "@/data/pages/home";
+import { AccentTitle } from "./AccentTitle";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { Logo } from "@/components/ui/Logo";
-import { SpecimenPlate } from "@/components/ui/SpecimenPlate";
+import { SpecimenPlate } from "@/components/herbarium/SpecimenPlate";
 
 export function Hero() {
   const { place, title, subtext, ctaLabel, teasLabel, plateLabel } = homeCopy.hero;
