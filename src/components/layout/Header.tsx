@@ -16,9 +16,9 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-40 border-b border-border bg-background/90 backdrop-blur-md">
       <div className="container-page flex h-16 items-center justify-between xl:h-20">
         <Wordmark />
-        <div className="flex items-center gap-1 xl:gap-8">
-          <nav aria-label="Main" className="hidden xl:block">
-            <ul className="flex gap-10">
+        <div className="flex items-center gap-1 lg:gap-6 xl:gap-8">
+          <nav aria-label="Main" className="hidden lg:block">
+            <ul className="flex gap-6 xl:gap-10">
               {mainNav.map((item) => {
                 const active = isActive(pathname, item.href);
                 return (

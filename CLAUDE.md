@@ -98,7 +98,7 @@ The signature experience. **As the visitor scrolls down this page, they climb th
 
 ### Shared layout
 
-- **Header:** serif text wordmark (links home; the full logo is too detailed at header size), with nav links to Our Story, Our Teas, How It's Grown and Contact. On mobile it becomes a full-screen menu with a hamburger toggle that is keyboard and screen-reader accessible. Highlight the active page.
+- **Header:** the logo badge beside the serif wordmark (links home; user's request 2026-10-11), with nav links to Our Story, Our Teas, How It's Grown and Contact. On mobile it becomes a full-screen menu with a hamburger toggle that is keyboard and screen-reader accessible. Highlight the active page.
 - **Footer:** short tagline, nav links, social icons, copyright.
 - **Page transitions:** a gentle fade only, disabled under reduced motion.
 - A custom `not-found.tsx` in the brand style.

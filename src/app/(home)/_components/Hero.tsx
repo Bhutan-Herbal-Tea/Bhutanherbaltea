@@ -9,7 +9,11 @@ import { SpecimenPlate } from "@/components/ui/SpecimenPlate";
 export function Hero() {
   const { place, title, subtext, ctaLabel, teasLabel, plateLabel } = homeCopy.hero;
   return (
-    <section className="container-page grid gap-14 pt-24 pb-16 md:grid-cols-2 md:items-center md:gap-10 md:pt-28 xl:grid-cols-[7fr_5fr] xl:gap-16 xl:pt-32 xl:pb-24">
+    // From tablet up the hero fills the first screen and the plate's height is capped by the
+    // viewport, so the whole plate and its seal are visible on short laptops (1366×768) and the
+    // hero doesn't stop short on tall monitors.
+    <section className="container-page grid gap-14 pt-24 pb-16 md:min-h-svh md:grid-cols-2 md:content-center md:items-center md:gap-10 md:pt-24 md:pb-16 xl:grid-cols-[7fr_5fr] xl:gap-16 xl:pt-28">
+
       <div className="md:order-1">
         <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
           <span lang="dz" aria-label={DRUK_JA_LATIN} className="font-tibetan text-xl text-forest dark:text-saffron">
@@ -30,7 +34,8 @@ export function Hero() {
           preload
           label={plateLabel}
           labelClassName="pl-14 md:pl-20 xl:pl-24"
-          frameClassName="aspect-16/10 md:aspect-4/5"
+          // w-full: with only aspect-ratio, a max-height cap would also narrow the photo.
+          frameClassName="aspect-16/10 w-full md:aspect-4/5 md:max-h-[58svh]"
           sizes="(min-width: 1280px) 40vw, (min-width: 768px) 50vw, 100vw"
           className="mx-6 md:mx-0"
         >

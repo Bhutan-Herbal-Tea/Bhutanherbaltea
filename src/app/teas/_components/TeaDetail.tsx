@@ -13,15 +13,18 @@ export function TeaDetail({ tea, others }: TeaDetailProps) {
   const copy = teaDetailCopy;
   return (
     <article className="pt-24 xl:pt-32">
-      <div className="container-page grid gap-12 xl:grid-cols-[45fr_55fr] xl:gap-20">
+      {/* Side by side from tablet up, so the name is on the first screen next to the photo;
+          the plate's height is capped by the viewport so its label stays visible while sticky. */}
+      <div className="container-page grid gap-10 md:grid-cols-[5fr_6fr] md:gap-10 xl:grid-cols-[45fr_55fr] xl:gap-20">
         <SpecimenPlate
           image={{ src: tea.image, alt: tea.imageAlt }}
           preload
           label={[tea.botanical, ...(tea.certifiedOrganic ? [copy.organicLabel] : []), PLATE_PLACE]}
-          sizes="(min-width: 1280px) 42vw, (min-width: 768px) 70vw, 100vw"
-          className="mx-auto w-full md:w-[70%] xl:sticky xl:top-28 xl:w-full xl:self-start"
+          frameClassName="aspect-4/3 w-full md:aspect-4/5 md:max-h-[60svh]"
+          sizes="(min-width: 1280px) 42vw, (min-width: 768px) 45vw, 100vw"
+          className="w-full md:sticky md:top-24 md:self-start xl:top-28"
         />
-        <div className="flex flex-col gap-10 xl:py-6">
+        <div className="flex flex-col gap-10 md:py-2 xl:py-6">
           <header>
             <p className="eyebrow text-accent-text">{copy.eyebrow}</p>
             <h1 className="mt-4 font-serif text-display text-foreground">{tea.name}</h1>
@@ -95,13 +98,17 @@ export function TeaDetail({ tea, others }: TeaDetailProps) {
           <h2 id="other-teas-heading" className="font-serif text-title text-foreground">
             {copy.otherTeasHeading}
           </h2>
-          <ul className="scroll-row -mx-5 mt-10 flex snap-x snap-mandatory scroll-px-5 gap-5 overflow-x-auto px-5 pt-2 pb-2 md:-mx-10 md:scroll-px-10 md:px-10 xl:mx-0 xl:grid xl:grid-cols-4 xl:gap-8 xl:overflow-visible xl:px-0">
+          {/* Swipeable on phones; three across from tablet up, matching the catalogue grid. */}
+          <ul className="scroll-row -mx-5 mt-10 flex snap-x snap-mandatory scroll-px-5 gap-5 overflow-x-auto px-5 pt-2 pb-2 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 xl:gap-10">
             {others.map((other) => (
-              <li key={other.slug} className="w-[66%] shrink-0 snap-start md:w-[40%] xl:w-auto">
-                <SpecimenCard tea={other} sizes="(min-width: 1280px) 280px, (min-width: 768px) 40vw, 66vw" />
+              <li key={other.slug} className="w-[72%] shrink-0 snap-start md:w-auto">
+                <SpecimenCard tea={other} sizes="(min-width: 1280px) 380px, (min-width: 768px) 33vw, 72vw" />
               </li>
             ))}
           </ul>
+          <ArrowLink href="/teas" className="mt-10">
+            {copy.allTeasLabel}
+          </ArrowLink>
         </div>
       </section>
     </article>

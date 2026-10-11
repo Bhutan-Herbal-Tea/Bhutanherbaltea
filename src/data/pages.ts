@@ -81,6 +81,7 @@ export const teaDetailCopy = {
     message: (teaName: string) => `Hello Bhutan Herbal Tea, I would like to enquire about ${teaName} Tea.`,
   },
   otherTeasHeading: "Other teas",
+  allTeasLabel: "See all teas",
 };
 
 export const contactPage = {

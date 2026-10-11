@@ -76,7 +76,7 @@ export default function ContactPage() {
             )}
           </section>
 
-          <div className="flex flex-col gap-14 md:col-span-2 xl:col-span-1">
+          <div className="flex flex-col gap-14">
             <EnquiryLinks />
             <section id="where-to-buy" aria-labelledby="where-to-buy-heading" className="scroll-mt-24">
               <h2 id="where-to-buy-heading" className="font-serif text-title text-foreground">
