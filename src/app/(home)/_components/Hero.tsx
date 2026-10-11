@@ -41,6 +41,7 @@ export function Hero() {
         >
           {/* The logo as an archive seal, stamped over the plate's lower corner. */}
           <Logo
+            eager
             className="absolute -bottom-6 -left-5 h-auto w-20 -rotate-8 md:-bottom-8 md:-left-8 md:w-28 xl:w-32"
             sizes="(min-width: 1280px) 128px, (min-width: 768px) 112px, 80px"
           />

@@ -19,6 +19,7 @@ export function Wordmark({ className }: { className?: string }) {
       <Image
         src={logo}
         alt=""
+        loading="eager"
         sizes="(min-width: 1280px) 52px, (min-width: 640px) 40px, 32px"
         className="h-auto w-8 max-[359px]:w-7 sm:w-10 xl:w-13"
       />
